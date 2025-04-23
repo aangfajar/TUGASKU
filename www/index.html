@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="css/index.css">
+
+    <title>Login TugasKu</title>
+</head>
+<body>
+
+    <div class="login-container">
+        <h2>Login</h2>
+        <br>
+        <form id="loginForm">
+          <div class="form-group">
+            <label for="username"></label>
+            <input type="text" id="username" placeholder="Username">
+          </div>
+        <br>
+          <div class="form-group">
+            <label for="password"></label>
+            <input type="password" id="password" placeholder="Password">
+          </div>
+        <br>
+          <button type="submit" class="login-btn" onclick="showPopupErrorLogin()">Masuk</button>
+          <div class="link">
+            <a href="register.html">Daftar di sini</a>
+          </div>
+        </form>
+      <div class="popup-overlay" id="popupLogin">
+        <div class="popup-box">
+          Masukkan Username/Password dengan benar
+          <button class="close-btn" onclick="hidePopupErrorLogin()">X</button>
+        </div>
+      </div>
+      </div>
+    <script src="cordova.js"></script>
+    <script src="js/index.js"></script>
+</body>
+</html>
