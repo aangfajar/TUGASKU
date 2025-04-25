@@ -1,0 +1,183 @@
+/* /* /* /*
+ * Licensed to the Apache Software Foundation (ASF) under one
+ * or more contributor license agreements.  See the NOTICE file
+ * distributed with this work for additional information
+ * regarding copyright ownership.  The ASF licenses this file
+ * to you under the Apache License, Version 2.0 (the
+ * "License"); you may not use this file except in compliance
+ * with the License.  You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing,
+ * software distributed under the License is distributed on an
+ * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ * KIND, either express or implied.  See the License for the
+ * specific language governing permissions and limitations
+ * under the License.
+ */
+* {
+    -webkit-tap-highlight-color: rgba(0,0,0,0); /* make transparent link selection, adjust last value opacity 0 to 1.0 */
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #191919;
+}
+
+.main-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh; 
+    width: 100vw;
+    margin: 0;
+    padding: 0;
+}
+
+.login-container {
+    background-color: #252525;
+    align-items: center;
+    padding: 30px 30px;
+    border-radius: 15px;
+    box-shadow: 11px 14px 19px 3px rgba(0,0,0,0.57);
+    -webkit-box-shadow: 11px 14px 19px 3px rgba(0,0,0,0.57);
+    -moz-box-shadow: 11px 14px 19px 3px rgba(0,0,0,0.57);
+    width: 60%;
+    max-width: 400px;
+    height: 250px;
+}
+
+.login-logo {
+    margin-top: 70px;
+    margin-bottom: 50px;
+}
+
+.login-container h2 {
+    text-align: center;
+    margin-top: 0px;
+    margin-bottom: 15px;
+    color: #737373;
+}
+
+.login-form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.form-group {
+    margin-bottom: 5px;
+    width: 100%;
+}
+
+.form-group label {
+    display: block;
+    color: #555;
+}
+
+.form-group input {
+    width: 94%;
+    padding: 8px 6px;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    font-size: 14px;
+    outline: none;
+}
+
+.login-btn {
+    width: 50%;
+    padding: 5px;
+    background-color: #737373;
+    color: #191919;
+    border: none;
+    border-radius: 8px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.login-btn:hover {
+    background-color: rgb(68, 68, 68);
+}
+
+.register-container {
+    background-color: white;
+    padding: 30px 40px;
+    border-radius: 15px;
+    width: 100%;
+    max-width: 400px;
+}
+
+.register-container h2 {
+    text-align: center;
+    margin-bottom: 25px;
+    color: #333;
+}
+
+.register-btn {
+    width: 100%;
+    padding: 12px;
+    background-color: #43e97b;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.register-btn:hover {
+    background-color: #2dd880;
+}
+
+.link {
+    text-align: center;
+    margin-top: 15px;
+}
+
+.link a {
+    color: #2283cf;
+    text-decoration: none;
+    font-size: 12px;
+}
+
+.popup-overlay {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100vw; height: 100vh;
+    background: rgba(0, 0, 0, 0.5);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.popup-box {
+background: white;
+padding-top: px;
+padding: 20px;
+width: 230px;
+border-radius: 10px;
+box-shadow: 0 0 15px rgba(0,0,0,0.3);
+position: relative;
+}
+
+.popup-box button.close-btn {
+position: absolute;
+top: 8px;
+right: 10px;
+background: crimson;
+color: white;
+border: none;
+padding: 5px 10px;
+cursor: pointer;
+border-radius: 5px;
+}
