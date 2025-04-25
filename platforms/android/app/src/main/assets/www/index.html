@@ -2,38 +2,22 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0" /> -->
-
-    <link rel="stylesheet" href="css/index.css" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/login.css" />
     <title>Login TugasKu</title>
   </head>
   <body>
     <div class="main-wrapper">
       <div class="login-logo">
-        <img src="img\logo hitam.png" alt="" width="290px">
+        <img src="img\logo hitam.png" alt="" width="290px" />
       </div>
       <div class="login-container">
         <h2>Login</h2>
-        <br />
-        <form id="loginForm" class="login-form">
-          <div class="form-group">
-            <label for="username"></label>
-            <input type="text" id="username" placeholder="Username" />
-          </div>
-          <br />
-          <div class="form-group">
-            <label for="password"></label>
-            <input type="password" id="password" placeholder="Password" />
-          </div>
-          <br />
-          <button type="submit" class="login-btn" onclick="showPopupErrorLogin()">
-            Masuk
-          </button>
-          <div class="link">
-            <a href="register.html">Belum punya akun?</a>
-          </div>
+        <form id="loginForm" class="login-form" action="beranda.html" method="post">
+          <input type="text" class="form-input" id="usernameLogin" placeholder="Username" />
+          <input type="password" class="form-input" id="passwordLogin" placeholder="Password" />
+          <button type="text" class="login-btn">Masuk</button>
+          <a href="register.html" class="login-link">Belum punya akun?</a>
         </form>
         <div class="popup-overlay" id="popupLogin">
           <div class="popup-box">
@@ -44,6 +28,6 @@
       </div>
     </div>
     <script src="cordova.js"></script>
-    <script src="js/index.js"></script>
+    <!-- <script src="js/login.js"></script> -->
   </body>
 </html>

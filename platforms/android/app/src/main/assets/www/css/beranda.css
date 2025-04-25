@@ -1,0 +1,90 @@
+* {
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0); /* Hilangkan highlight pada link */
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #191919;
+}
+
+.header-beranda {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    display: flex; /* Elemen dalam baris horizontal */
+    align-items: center; /* Vertikal rata tengah */
+    padding: 10px;
+}
+
+#menu-icon {
+    width: 30px; /* Ukuran ikon menu */
+    cursor: pointer; /* Menunjukkan ikon dapat diklik */
+}
+
+#menu-label {
+    font-size: 16px;
+    color: white;
+    margin-left: 10px; /* Jarak antara ikon dan teks */
+    white-space: nowrap; /* Mencegah teks terpotong ke baris baru */
+}
+
+/* Panel menu */
+.side-panel {
+    position: fixed;
+    top: 0;
+    left: -250px; /* Tersembunyi di luar layar */
+    width: 250px;
+    height: 100%;
+    background-color: #333;
+    color: white;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
+    transition: left 0.3s ease; /* Animasi untuk transisi */
+    z-index: 1000;
+}
+
+.side-panel ul {
+    list-style: none;
+    padding: 20px;
+    margin: 0;
+}
+
+.side-panel ul li {
+    margin: 30px 0; /* Jarak antar item menu */
+}
+
+.side-panel ul li a {
+    display: flex; /* Elemen dalam baris horizontal */
+    align-items: center; /* Vertikal rata tengah */
+    color: white;
+    text-decoration: none; /* Hilangkan garis bawah */
+    font-size: 16px;
+}
+
+.side-panel ul li a:hover {
+    text-decoration: underline;
+}
+
+.side-panel.open {
+    left: 0; /* Panel muncul di layar */
+}
+
+.menu-icon {
+    width: 20px; /* Ukuran ikon */
+    height: 20px; /* Ukuran ikon */
+    margin-right: 10px; /* Jarak antara ikon dan teks */
+}
+
+.menu-text {
+    white-space: nowrap; /* Mencegah teks terpotong ke baris baru */
+}
+
+.link-logout {
+    position: absolute;
+    top: 750px;
+}

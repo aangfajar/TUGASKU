@@ -37,11 +37,9 @@ document.getElementById('loginForm').addEventListener('submit', function(e) {
     if (username === '' || password === '') {
       showPopup();
       return;
+    }else{
+      window.location.href = 'beranda.html';
     }
-
-
-
-    window.location.href = 'beranda.html';
 });
 
 document.getElementById('registerForm').addEventListener('submit', function(e) {

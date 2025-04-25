@@ -3,9 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
     <link rel="stylesheet" href="css/login.css" />
-
     <title>Login TugasKu</title>
   </head>
   <body>
@@ -15,10 +13,10 @@
       </div>
       <div class="login-container">
         <h2>Login</h2>
-        <form id="loginForm" class="login-form">
+        <form id="loginForm" class="login-form" action="beranda.html" method="post">
           <input type="text" class="form-input" id="usernameLogin" placeholder="Username" />
           <input type="password" class="form-input" id="passwordLogin" placeholder="Password" />
-          <button type="submit" class="login-btn" onclick="showPopupErrorLogin()">Masuk</button>
+          <button type="text" class="login-btn">Masuk</button>
           <a href="register.html" class="login-link">Belum punya akun?</a>
         </form>
         <div class="popup-overlay" id="popupLogin">
@@ -30,6 +28,6 @@
       </div>
     </div>
     <script src="cordova.js"></script>
-    <script src="js/index.js"></script>
+    <!-- <script src="js/login.js"></script> -->
   </body>
 </html>
