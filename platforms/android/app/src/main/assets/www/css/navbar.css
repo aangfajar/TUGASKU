@@ -2,7 +2,10 @@
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0); /* Hilangkan highlight pada link */
 }
 
-.navbar{
+.header{
+    position: absolute;
+    top: 10px;
+    left: 10px;
     display: flex; /* Elemen dalam baris horizontal */
     align-items: center; /* Vertikal rata tengah */
     padding: 10px;
@@ -60,7 +63,6 @@
     color: white;
     text-decoration: none; /* Hilangkan garis bawah */
     font-size: 16px;
-    font-family: Arial, sans-serif; /* Font yang digunakan */
     padding: 10px 20px; /* Padding internal */
     box-sizing: border-box; /* Pastikan padding tidak mengubah ukuran elemen */
     width: 100%; /* Pastikan semua elemen memiliki lebar yang sama */

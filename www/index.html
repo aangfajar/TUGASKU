@@ -13,21 +13,19 @@
       </div>
       <div class="login-container">
         <h2>Login</h2>
-        <form id="loginForm" class="login-form" action="beranda.html" method="post">
+        <form id="loginForm" class="login-form">
           <input type="text" class="form-input" id="usernameLogin" placeholder="Username" />
           <input type="password" class="form-input" id="passwordLogin" placeholder="Password" />
-          <button type="text" class="login-btn">Masuk</button>
+          <button type="submit" class="login-btn">Masuk</button>
           <a href="register.html" class="login-link">Belum punya akun?</a>
         </form>
         <div class="popup-overlay" id="popupLogin">
           <div class="popup-box">
-            Masukkan Username/Password dengan benar
-            <button class="close-btn" onclick="hidePopupErrorLogin()">X</button>
+            Harap isi username dan password!
           </div>
         </div>
       </div>
     </div>
-    <script src="cordova.js"></script>
-    <!-- <script src="js/login.js"></script> -->
+    <script src="js/login.js"></script>
   </body>
 </html>
