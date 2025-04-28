@@ -69,6 +69,8 @@
 
 .side-panel ul li a:hover {
     text-decoration: none;
+    background-color: #737373;
+    border-radius: 10px;
 }
 
 .side-panel ul li a.active {
