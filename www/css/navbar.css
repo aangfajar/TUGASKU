@@ -28,7 +28,7 @@
 .side-panel {
     position: fixed;
     top: 0;
-    left: -250px; /* Tersembunyi di luar layar */
+    left: -250px; 
     width: 200px;
     height: 100%;
     background-color: #252525;

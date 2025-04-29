@@ -34,15 +34,32 @@ body {
     text-align: center; 
 }
 
-.beranda-container p {
-    display: flex;
-    align-self: flex-start;
-    color: #737373;
-    font-size: 12px;
+.lastseen-container {
+    display: flex; /* Gunakan flexbox untuk tata letak horizontal */
+    gap: 15px; /* Jarak antar card */
+    overflow-x: auto; /* Aktifkan scroll horizontal */
+    overflow-y: hidden; /* Nonaktifkan scroll vertikal */
+    white-space: nowrap; /* Mencegah elemen turun ke baris baru */
+    padding: 10px 0px;
+    width: 100%;
+    box-sizing: border-box; /* Pastikan padding termasuk dalam ukuran elemen */
+    margin-bottom: 30px;
 }
 
-.beranda-icon-lastseen {
-    width: 15px; /* Ukuran lebar gambar */
-    height: 15px; /* Ukuran tinggi gambar */
-    margin-right: 10px;
+.upcoming-container {
+    display: flex;
+    width: 100%;
+    justify-content: center; /* Pusatkan card secara horizontal */
+    align-items: center; /* Pusatkan card secara vertikal */
+    padding: 10px 0px;
+    margin-bottom: 30px;
+}
+
+.info-tugas-container {
+    display: flex;
+    width: 100%;
+    justify-content: center; /* Pusatkan card secara horizontal */
+    align-items: center; /* Pusatkan card secara vertikal */
+    padding: 10px 0px;
+    margin-bottom: 30px;
 }
