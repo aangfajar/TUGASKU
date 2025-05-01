@@ -2,6 +2,10 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const bcrypt = require('bcryptjs');
 const db = require('./db');
+const jwt = require('jsonwebtoken'); 
+const SECRET_KEY = 'your_secret_key'; 
+const { body, validationResult } = require('express-validator');
+const path = require('path');
 
 const app = express();
 app.use(bodyParser.json());
@@ -25,31 +29,66 @@ app.post('/register', (req, res) => {
     });
 });
 
-// Rute untuk login
-app.post('/login', (req, res) => {
-    const { username, password } = req.body;
-
-    // Periksa username di database
-    const sql = 'SELECT * FROM users WHERE username = ?';
-    db.query(sql, [username], (err, results) => {
-        if (err) {
-            console.error(err);
-            return res.status(500).send('Terjadi kesalahan.');
+// Rute untuk login dengan validasi
+app.post('/login', 
+    [
+        body('username').notEmpty().withMessage('Username wajib diisi.'),
+        body('password').notEmpty().withMessage('Password wajib diisi.')
+    ], 
+    (req, res) => {
+        const errors = validationResult(req);
+        if (!errors.isEmpty()) {
+            return res.status(400).json({ errors: errors.array() });
         }
 
-        if (results.length === 0) {
-            return res.status(401).send('Username atau password salah.');
-        }
+        const { username, password } = req.body;
 
-        // Periksa password
-        const user = results[0];
-        const isPasswordValid = bcrypt.compareSync(password, user.password);
-        if (!isPasswordValid) {
-            return res.status(401).send('Username atau password salah.');
-        }
+        // Periksa username di database
+        const sql = 'SELECT * FROM users WHERE username = ?';
+        db.query(sql, [username], (err, results) => {
+            if (err) {
+                console.error(err);
+                return res.status(500).send('Terjadi kesalahan.');
+            }
 
-        res.send('Login berhasil!');
+            if (results.length === 0) {
+                return res.status(401).send('Username atau password salah.');
+            }
+
+            // Periksa password
+            const user = results[0];
+            const isPasswordValid = bcrypt.compareSync(password, user.password);
+            if (!isPasswordValid) {
+                return res.status(401).send('Username atau password salah.');
+            }
+
+            // Buat token JWT
+            const token = jwt.sign({ id: user.id, username: user.username }, SECRET_KEY, { expiresIn: '1h' });
+
+            res.json({ message: 'Login berhasil!', token }); // Kirim token ke klien
+        });
+    }
+);
+
+function authenticateToken(req, res, next) {
+    const token = req.headers['authorization']; // Ambil token dari header Authorization
+    if (!token) return res.status(403).send('Token tidak ditemukan.');
+
+    jwt.verify(token, SECRET_KEY, (err, user) => {
+        if (err) return res.status(403).send('Token tidak valid.');
+        req.user = user; // Simpan data pengguna ke dalam request
+        next(); // Lanjutkan ke handler berikutnya
     });
+}
+
+app.get('/profile', authenticateToken, (req, res) => {
+    res.json({ message: 'Ini adalah data profil Anda.', user: req.user });
+});
+
+
+app.use(express.static(path.join(__dirname, 'www')));
+app.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname, 'www', 'index.html'));
 });
 
 // Jalankan server
