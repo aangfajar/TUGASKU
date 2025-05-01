@@ -8,83 +8,58 @@ body {
     font-family: Arial, sans-serif;
     display: flex;
     justify-content: center;
-    align-items: center;
     min-height: 100vh;
-    background: #191919;
+    background-color: #191919;
 }
 
-.header-beranda {
-    position: absolute;
-    top: 10px;
-    left: 10px;
-    display: flex; /* Elemen dalam baris horizontal */
-    align-items: center; /* Vertikal rata tengah */
-    padding: 10px;
-}
-
-#menu-icon {
-    width: 30px; /* Ukuran ikon menu */
-    cursor: pointer; /* Menunjukkan ikon dapat diklik */
-}
-
-#menu-label {
-    font-size: 16px;
-    color: white;
-    margin-left: 10px; /* Jarak antara ikon dan teks */
-    white-space: nowrap; /* Mencegah teks terpotong ke baris baru */
-}
-
-/* Panel menu */
-.side-panel {
-    position: fixed;
-    top: 0;
-    left: -250px; /* Tersembunyi di luar layar */
-    width: 250px;
-    height: 100%;
-    background-color: #333;
-    color: white;
-    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
-    transition: left 0.3s ease; /* Animasi untuk transisi */
-    z-index: 1000;
-}
-
-.side-panel ul {
-    list-style: none;
-    padding: 20px;
+.beranda-container {
     margin: 0;
+    margin-top: 60px; /* Tetap menjaga jarak dari atas */
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 90vw;
+    height: calc(100vh - 60px); /* Hitung tinggi yang tersisa dari viewport */
+    box-sizing: border-box; /* Pastikan padding tidak menambah ukuran elemen */
 }
 
-.side-panel ul li {
-    margin: 30px 0; /* Jarak antar item menu */
+.beranda-container h1 {
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 700;
+    margin-top: 10px;
+    color: #ffffff;
+    font-size: 24px;
+    align-self: center; 
+    text-align: center; 
 }
 
-.side-panel ul li a {
-    display: flex; /* Elemen dalam baris horizontal */
-    align-items: center; /* Vertikal rata tengah */
-    color: white;
-    text-decoration: none; /* Hilangkan garis bawah */
-    font-size: 16px;
+.lastseen-container {
+    display: flex; /* Gunakan flexbox untuk tata letak horizontal */
+    gap: 15px; /* Jarak antar card */
+    overflow-x: auto; /* Aktifkan scroll horizontal */
+    overflow-y: hidden; /* Nonaktifkan scroll vertikal */
+    white-space: nowrap; /* Mencegah elemen turun ke baris baru */
+    padding: 10px 0px;
+    width: 100%;
+    box-sizing: border-box; /* Pastikan padding termasuk dalam ukuran elemen */
+    margin-bottom: 30px;
 }
 
-.side-panel ul li a:hover {
-    text-decoration: underline;
+.upcoming-container {
+    display: flex;
+    width: 100%;
+    justify-content: center; /* Pusatkan card secara horizontal */
+    align-items: center; /* Pusatkan card secara vertikal */
+    padding: 10px 0px;
+    margin-bottom: 30px;
 }
 
-.side-panel.open {
-    left: 0; /* Panel muncul di layar */
-}
-
-.menu-icon {
-    width: 20px; /* Ukuran ikon */
-    height: 20px; /* Ukuran ikon */
-    margin-right: 10px; /* Jarak antara ikon dan teks */
-}
-
-.menu-text {
-    white-space: nowrap; /* Mencegah teks terpotong ke baris baru */
-}
-
-.link-logout {
-    position: absolute;
-    top: 750px;
+.info-tugas-container {
+    display: flex;
+    width: 100%;
+    justify-content: center; /* Pusatkan card secara horizontal */
+    align-items: center; /* Pusatkan card secara vertikal */
+    padding: 10px 0px;
+    margin-bottom: 30px;
 }

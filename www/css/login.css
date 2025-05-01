@@ -21,6 +21,7 @@ body {
     width: 100vw;
     margin: 0;
     padding: 0;
+
 }
 
 .login-container {
@@ -35,6 +36,8 @@ body {
     max-width: 400px;
     height: 250px;
 }
+
+
 
 .login-logo {
     margin-top: 70px;
@@ -112,4 +115,17 @@ body {
     color: #f1f1f1; /* Warna teks terang */
     font-size: 14px;
     font-family: Arial, sans-serif;
+}
+
+.fade-in {
+    animation: fadeIn 1s ease-in-out; /* Animasi masuk selama 1 detik */
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
 }

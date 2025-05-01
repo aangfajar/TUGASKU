@@ -1,0 +1,12 @@
+.label-p{
+    display: flex;
+    align-self: flex-start;
+    color: #737373;
+    font-size: 12px;
+}
+
+.icon-label{
+    width: 15px; /* Ukuran lebar gambar */
+    height: 15px; /* Ukuran tinggi gambar */
+    margin-right: 10px;
+}

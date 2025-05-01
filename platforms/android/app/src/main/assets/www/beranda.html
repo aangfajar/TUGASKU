@@ -5,14 +5,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Beranda</title>
     <link rel="stylesheet" href="css/beranda.css" />
+    <link rel="stylesheet" href="css/navbar.css" />
+    <link rel="stylesheet" href="css/header.css" />
+    <link rel="stylesheet" href="css/label-p.css" />
+    <link rel="stylesheet" href="css/cardKecilKosong.css" />
+    <link rel="stylesheet" href="css/cardPanjangKosong.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <div class="main-wrapper">
-    <div class="header-beranda">
-        <img id="menu-icon" src="img/icon-menu.png" alt="Menu Icon" />
-        <span id="menu-label">Beranda</span>
+    <div class="header">
+        <div class="navbar">
+            <img id="menu-icon" src="img/icon-menu.png" alt="Menu Icon" />
+            <span id="menu-label">Beranda</span>
+        </div>
+        <div class="profile-menu">
+            <img id="profile-icon" src="img/icon-profile.jpg" alt="Profile Icon" />
+            <div class="dropdown-menu" id="dropdownMenu">
+                <a href="set-profile.html">Set Profile</a>
+                <a href="ganti-foto.html">Ganti Foto Profile</a>
+            </div>
+        </div>
     </div>
     <nav class="side-panel">
+        <img src="img/logo hitam.png" alt="Logo Icon" width="150px" class="logo-icon" />
         <ul class="menu-list">
         <li>
             <a href="beranda.html">
@@ -45,7 +61,7 @@
             </a>
         </li>
         <li>
-            <a href="login.html" class="link-logout">
+            <a href="index.html" class="link-logout">
             <img src="img/icon-logout.png" alt="Logout Icon" class="menu-icon">
             <span class="menu-text">Logout</span>
             </a>
@@ -53,9 +69,44 @@
         </ul>
     </nav>
     <div class="beranda-container">
-        <!-- Konten utama -->
+        <h1>
+            <!-- time of day teko js -->
+        </h1>
+        <p class="label-p">
+            <img src="img/icon-lastseen.png" alt="Lastseen Icon" class="icon-label" />
+            Terakhir dilihat
+        </p>
+        <div class="lastseen-container">
+            <div class="card-kecil-kosong">
+                <div class="card-kecil-cover">
+                    <img src="img/icon-add.png" alt="Add Icon" class="card-add-icon">
+                </div>
+                <p>Halaman baru</p>
+            </div>
+        </div>
+        <p class="label-p">
+            <img src="img/icon-calender-abu.png" alt="Lastseen Icon" class="icon-label" />
+            Aktivitas mendatang
+        </p>
+        <div class="upcoming-container">
+            <div class="card-panjang-kosong">
+                <p>Tidak ada aktivitas 3 hari mendatang</p>
+                <a href="#" class="add-activity-link">+ Aktivitas baru</a>
+            </div>
+        </div>
+        <p class="label-p">
+            <img src="img/icon-itask-abu.png" alt="iTask Icon" class="icon-label" />
+            Informasi tugas
+        </p>
+        <div class="info-tugas-container">
+            <div class="card-panjang-kosong">
+                <p>Tidak ada tugas yang di terima</p>
+            </div>
+        </div>
     </div>
     </div>
-    <script src="js/beranda.js"></script>
+    <script src="js/navbar.js"></script>
+    <script src="js/profile.js"></script>
+    <script src="js/timeOfDay.js"></script>
 </body>
 </html>

@@ -1,0 +1,58 @@
+.header {
+    position: fixed; /* Membuat header tetap di atas */
+    top: 0; /* Tempelkan di bagian atas */
+    left: 0;
+    width: 100%; /* Pastikan header memenuhi lebar layar */
+    z-index: 1000; /* Pastikan header berada di atas elemen lainnya */
+    background-color: #191919; /* Warna latar belakang header */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Opsional: Tambahkan bayangan */
+    display: flex; /* Elemen dalam baris horizontal */
+    align-items: center; /* Vertikal rata tengah */
+    padding: 0px;
+}
+
+/* Profile menu container */
+.profile-menu {
+    position: relative;
+    display: inline-block;
+    margin-left: auto; /* Letakkan di sisi kanan */
+    cursor: pointer;
+    margin-right: 15px; /* Jarak dari sisi kanan */
+    margin-top: 5px;
+}
+
+/* Profile icon */
+#profile-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%; /* Membuat icon berbentuk lingkaran */
+}
+
+/* Dropdown menu */
+.dropdown-menu {
+    display: none; /* Sembunyikan secara default */
+    position: absolute;
+    top: 50px; /* Jarak dari icon profile */
+    right: 0;
+    background-color: #252525; /* Warna sesuai tema */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Bayangan lembut */
+    z-index: 1000;
+    padding: 10px 0;
+    width: 150px;
+}
+
+/* Dropdown menu items */
+.dropdown-menu a {
+    display: block;
+    padding: 10px 15px;
+    color: #f1f1f1;
+    text-decoration: none;
+    font-size: 14px;
+    font-family: Arial, sans-serif;
+}
+
+.dropdown-menu a:hover {
+    background-color: #737373; /* Warna saat hover */
+}
+

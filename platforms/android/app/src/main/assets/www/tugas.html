@@ -5,17 +5,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Tugas</title>
     <link rel="stylesheet" href="css/tugas.css" />
-    <link rel="stylesheet" href="css/navbar.css">
+    <link rel="stylesheet" href="css/navbar.css" />
+    <link rel="stylesheet" href="css/header.css" />
+    <link rel="stylesheet" href="css/label-p.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <div class="main-wrapper">
     <div class="header">
-        <img id="menu-icon" src="img/icon-menu.png" alt="Menu Icon" />
-        <span id="menu-label">Tugas</span>
+        <div class="navbar">
+            <img id="menu-icon" src="img/icon-menu.png" alt="Menu Icon" />
+            <span id="menu-label">Tugas</span>
+        </div>
+        <div class="profile-menu">
+            <img id="profile-icon" src="img/icon-profile.jpg" alt="Profile Icon" />
+            <div class="dropdown-menu" id="dropdownMenu">
+                <a href="set-profile.html">Set Profile</a>
+                <a href="ganti-foto.html">Ganti Foto Profile</a>
+            </div>
+        </div>
     </div>
     <nav class="side-panel">
+        <img src="img/logo hitam.png" alt="Logo Icon" width="150px" class="logo-icon" />
         <ul class="menu-list">
-            <img src="img/logo hitam.png" alt="Logo Icon" width="150px" class="logo-icon" />
         <li>
             <a href="beranda.html">
             <img src="img/icon-beranda.png" alt="Beranda Icon" class="menu-icon">
@@ -55,9 +67,17 @@
         </ul>
     </nav>
     <div class="tugas-container">
-        <!-- Konten utama untuk halaman Tugas -->
+        <h1>
+            <!-- time of day teko js -->
+        </h1>
+        <p class="label-p">
+            <img src="img/icon-tugas-abu.png" alt="Tugas Icon" class="icon-label" />
+            Tugas anda
+        </p>
     </div>
     </div>
     <script src="js/navbar.js"></script>
+    <script src="js/profile.js"></script>
+    <script src="js/timeOfDay.js"></script>
 </body>
 </html>

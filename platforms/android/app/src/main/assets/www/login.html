@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Login page for TugasKu" />
+    <meta name="keywords" content="login, tugas, tugasku" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/login.css" />
+    <title>Login TugasKu</title>
+  </head>
+  <body>
+    <div class="main-wrapper">
+      <div class="login-logo">
+        <img src="img\logo hitam.png" alt="" width="290px" />
+      </div>
+      <div class="login-container">
+        <h2>Login</h2>
+        <form id="loginForm" class="login-form">
+          <input type="text" class="form-input" id="usernameLogin" placeholder="Username" />
+          <input type="password" class="form-input" id="passwordLogin" placeholder="Password" />
+          <button type="submit" class="login-btn">Masuk</button>
+          <a href="register.html" class="login-link">Belum punya akun?</a>
+        </form>
+        <div class="popup-overlay" id="popupLogin">
+          <div class="popup-box">
+            Harap isi username dan password!
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="js/login.js"></script>
+  </body>
+</html>

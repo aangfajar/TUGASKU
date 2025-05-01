@@ -1,31 +1,50 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="css/login.css" />
-    <title>Login TugasKu</title>
-  </head>
-  <body>
-    <div class="main-wrapper">
-      <div class="login-logo">
-        <img src="img\logo hitam.png" alt="" width="290px" />
-      </div>
-      <div class="login-container">
-        <h2>Login</h2>
-        <form id="loginForm" class="login-form">
-          <input type="text" class="form-input" id="usernameLogin" placeholder="Username" />
-          <input type="password" class="form-input" id="passwordLogin" placeholder="Password" />
-          <button type="submit" class="login-btn">Masuk</button>
-          <a href="register.html" class="login-link">Belum punya akun?</a>
-        </form>
-        <div class="popup-overlay" id="popupLogin">
-          <div class="popup-box">
-            Harap isi username dan password!
-          </div>
+<!--
+    Licensed to the Apache Software Foundation (ASF) under one
+    or more contributor license agreements.  See the NOTICE file
+    distributed with this work for additional information
+    regarding copyright ownership.  The ASF licenses this file
+    to you under the Apache License, Version 2.0 (the
+    "License"); you may not use this file except in compliance
+    with the License.  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing,
+    software distributed under the License is distributed on an
+    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+     KIND, either express or implied.  See the License for the
+    specific language governing permissions and limitations
+    under the License.
+-->
+<html>
+    <head>
+        <meta charset="utf-8">
+        <!--
+        Customize this policy to fit your own app's needs. For more guidance, please refer to the docs:
+            https://cordova.apache.org/docs/en/latest/
+        Some notes:
+            * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
+            * Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
+                * Enable inline JS: add 'unsafe-inline' to default-src
+        -->
+        <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; img-src 'self' data: content:;">
+        <meta name="format-detection" content="telephone=no">
+        <meta name="msapplication-tap-highlight" content="no">
+        <meta name="viewport" content="initial-scale=1, width=device-width, viewport-fit=cover">
+        <meta name="color-scheme" content="light dark">
+        <link rel="stylesheet" href="css/loading.css">
+        <title>TUGASKU</title>
+    </head>
+    <body>
+        <div>
+            <div class="loading-container">
+                <div class="spinner"></div>
+                <img src="img/logo hitam.png" alt="" class="loading-image">
+                <!-- <h1 class="loading-text">TUGASKU</h1> -->
+            </div>
+        
+            <script src="js/loading.js"></script>
         </div>
-      </div>
-    </div>
-    <script src="js/login.js"></script>
-  </body>
+    </body>
 </html>

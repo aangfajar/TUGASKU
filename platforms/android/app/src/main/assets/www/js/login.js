@@ -1,69 +1,37 @@
-/*
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
- *
- * http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
- */
+document.addEventListener('DOMContentLoaded', function () {
+    document.getElementById('loginForm').addEventListener('submit', function (e) {
+        e.preventDefault();
 
-// Wait for the deviceready event before using any of Cordova's device APIs.
-// See https://cordova.apache.org/docs/en/latest/cordova/events/events.html#deviceready
-document.addEventListener('deviceready', onDeviceReady, false);
+        const username = document.getElementById('usernameLogin').value.trim();
+        const password = document.getElementById('passwordLogin').value.trim();
 
-function onDeviceReady() {
-    // Cordova is now initialized. Have fun!
+        if (username === '' || password === '') {
+            showPopupErrorLogin('Harap isi username dan password!');
+            return;
+        }
 
-    console.log('Running cordova-' + cordova.platformId + '@' + cordova.version);
-    document.getElementById('deviceready').classList.add('ready');
+        window.location.href = 'beranda.html'; // Redirect jika validasi berhasil
+    });
+
+    // Tambahkan event listener untuk menyembunyikan popup saat area luar diklik
+    document.getElementById('popupLogin').addEventListener('click', function (e) {
+        if (e.target === this) { // Pastikan klik terjadi di luar popup-box
+            hidePopupErrorLogin();
+        }
+    });
+});
+
+function showPopupErrorLogin(message) {
+    const popup = document.getElementById('popupLogin');
+    const popupMessage = popup.querySelector('.popup-box');
+    popupMessage.textContent = message; // Set pesan error
+    popup.style.display = 'flex'; // Tampilkan popup
 }
 
-document.getElementById('loginForm').addEventListener('submit', function(e) {
-    e.preventDefault();
-
-    const username = document.getElementById('username').value.trim();
-    const password = document.getElementById('password').value.trim();
-
-    if (username === '' || password === '') {
-      showPopup();
-      return;
-    }else{
-      window.location.href = 'beranda.html';
-    }
-});
-
-document.getElementById('registerForm').addEventListener('submit', function(e) {
-    e.preventDefault();
-
-    const newUsername = document.getElementById('newUsername').value.trim();
-    const newPassword = document.getElementById('newPassword').value.trim();
-
-    if (newUsername === '' || newPassword === '') {
-      showPopup();
-      return;
-    }
-
-    alert('Pendaftaran berhasil');
-    window.location.href = 'login.html';
-});
-
-  function showPopupErrorLogin() {
-    document.getElementById('popupLogin').style.display = 'flex';
-  }
-
-  function hidePopupErrorLogin() {
-    document.getElementById('popupLogin').style.display = 'none';
-  }
+function hidePopupErrorLogin() {
+    const popup = document.getElementById('popupLogin');
+    popup.style.display = 'none'; // Sembunyikan popup
+}
 
 
 
