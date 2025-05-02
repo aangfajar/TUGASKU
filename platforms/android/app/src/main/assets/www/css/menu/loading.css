@@ -1,0 +1,90 @@
+
+/* filepath: vsls:/www/css/loading.css */
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(135deg, #191919, #252525);
+    font-family: 'Arial', sans-serif;
+    color: #fff;
+    overflow: hidden;
+}
+
+.loading-container {
+    text-align: center;
+}
+
+.spinner {
+    width: 80px;
+    height: 80px;
+    border: 8px solid rgba(255, 255, 255, 0.3);
+    border-top: 8px solid #fff;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin: 0 auto 20px;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.loading-text {
+    font-size: 24px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    animation: fadeIn 2s ease-in-out infinite alternate;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0.5;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.loading-image {
+    width: 200px;
+
+    background: url('../img/logo hitam.png') no-repeat center center;
+    background-size: contain; /* Pastikan gambar tetap proporsional */
+    animation: bounce 2s infinite ease-in-out;
+    margin: 0 auto;
+
+    /* Tambahan untuk presisi */
+    image-rendering: -webkit-optimize-contrast; /* Untuk browser berbasis WebKit */
+    image-rendering: crisp-edges; /* Untuk browser modern */
+    image-rendering: pixelated; /* Untuk fallback */
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+.fade-out {
+    animation: fadeOut 1s forwards; /* Animasi keluar selama 1 detik */
+}
+
+
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}

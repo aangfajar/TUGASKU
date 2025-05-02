@@ -1,0 +1,131 @@
+* {
+    -webkit-tap-highlight-color: rgba(0,0,0,0); /* make transparent link selection, adjust last value opacity 0 to 1.0 */
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #191919;
+}
+
+.main-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh; 
+    width: 100vw;
+    margin: 0;
+    padding: 0;
+
+}
+
+.login-container {
+    background-color: #252525;
+    align-items: center;
+    padding: 30px 30px;
+    border-radius: 15px;
+    box-shadow: 11px 14px 19px 3px rgba(0,0,0,0.57);
+    -webkit-box-shadow: 11px 14px 19px 3px rgba(0,0,0,0.57);
+    -moz-box-shadow: 11px 14px 19px 3px rgba(0,0,0,0.57);
+    width: 230px;
+    max-width: 400px;
+    height: 250px;
+}
+
+
+
+.login-logo {
+    margin-top: 70px;
+    margin-bottom: 50px;
+}
+
+.login-container h2 {
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 15px;
+    color: #737373;
+}
+
+.login-form {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.form-input {
+    width: 210px;
+    padding: 8px 6px;
+    margin-top: 15px;
+    border: 2px solid #737373;
+    border-radius: 8px;
+    font-size: 14px;
+    outline: none;
+}
+
+.login-btn {
+    width: 110px;
+    padding: 5px;
+    margin-top: 30px;
+    background-color: #737373;
+    color: #191919;
+    border: none;
+    border-radius: 8px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.login-btn:hover {
+    background-color: rgb(68, 68, 68);
+}
+
+.login-link {
+    text-align: center;
+    margin-top: 15px;
+    color: #2283cf;
+    text-decoration: none;
+    font-size: 12px;
+}
+
+.popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.5); /* Latar belakang transparan */
+    display: none; /* Sembunyikan secara default */
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.popup-box {
+    background: #252525; /* Warna sesuai tema */
+    padding: 15px 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Bayangan lembut */
+    text-align: center;
+    color: #f1f1f1; /* Warna teks terang */
+    font-size: 14px;
+    font-family: Arial, sans-serif;
+}
+
+.fade-in {
+    animation: fadeIn 1s ease-in-out; /* Animasi masuk selama 1 detik */
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}

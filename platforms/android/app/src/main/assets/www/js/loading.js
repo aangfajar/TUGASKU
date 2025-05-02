@@ -1,11 +1,12 @@
-setTimeout(() => {
-    fetch("login.html")
-        .then(response => {
-            if (response.ok) {
-                window.location.href = "login.html";
-            } else {
-                console.error("File login.html tidak ditemukan!");
-            }
-        })
-        .catch(error => console.error("Error:", error));
-}, 3000);
+ // Tambahkan animasi keluar sebelum redirect
+ const loadingContainer = document.querySelector('.loading-container');
+
+ setTimeout(() => {
+     // Tambahkan kelas fade-out
+     loadingContainer.classList.add('fade-out');
+
+     // Tunggu animasi selesai sebelum redirect
+     setTimeout(() => {
+         window.location.href = "login.html"; // Redirect ke login.html
+     }, 1000); // Durasi animasi fade-out (1 detik)
+ }, 3000); // Durasi loading sebelum animasi keluar
