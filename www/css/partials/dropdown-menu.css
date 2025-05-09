@@ -1,0 +1,36 @@
+/* Dropdown menu untuk card */
+.dropdown-menu-card {
+    display: none; /* Sembunyikan secara default */
+    position: absolute; /* Gunakan absolute untuk fleksibilitas posisi */
+    top: var(--dropdown-top, 50px); /* Variabel untuk jarak dari atas, default 50px */
+    left: var(--dropdown-left, auto); /* Variabel untuk jarak dari kiri, default auto */
+    right: var(--dropdown-right, 0); /* Variabel untuk jarak dari kanan, default 0 */
+    background-color: #252525; /* Warna sesuai tema */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Bayangan lembut */
+    z-index: 1000;
+    padding: 10px 0;
+    width: 100px;
+}
+
+/* Dropdown menu items */
+.dropdown-menu-card a {
+    display: flex;
+    align-items: center;
+    padding: 10px 15px;
+    color: #737373;
+    text-decoration: none;
+    font-size: 11px;
+    font-family: Arial, sans-serif;
+}
+
+.icon-dropdown {
+    width: 14px; /* Ukuran lebar gambar */
+    height: 14px; /* Ukuran tinggi gambar */
+    margin-right: 10px;
+}
+
+.dropdown-menu-card a:hover {
+    color: #252525;
+    background-color: #737373; /* Warna saat hover */
+}

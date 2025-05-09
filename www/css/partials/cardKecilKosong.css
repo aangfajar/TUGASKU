@@ -1,5 +1,5 @@
 .card-kecil-kosong {
-    flex-shrink: 0;
+    flex-shrink:0;
     position: relative; /* Pastikan card menjadi parent untuk positioning */
     background-color: #252525; /* Warna latar belakang bagian bawah card */
     width: 155px; /* Lebar tetap card */
@@ -10,6 +10,9 @@
     flex-direction: column;
     cursor: pointer;
     overflow: hidden;
+
+
+    
 }
 
 .card-kecil-cover {

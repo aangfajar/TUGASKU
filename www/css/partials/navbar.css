@@ -3,8 +3,8 @@
 }
 
 .navbar{
-    display: flex; /* Elemen dalam baris horizontal */
-    align-items: center; /* Vertikal rata tengah */
+    display: flex;
+    align-items: center;
     padding: 10px;
 }
 
@@ -13,15 +13,15 @@
 }
 
 #menu-icon {
-    width: 25px; /* Ukuran ikon menu */
-    cursor: pointer; /* Menunjukkan ikon dapat diklik */
+    width: 25px;
+    cursor: pointer;
 }
 
 #menu-label {
     font-size: 14px;
     color: white;
-    margin-left: 10px; /* Jarak antara ikon dan teks */
-    white-space: nowrap; /* Mencegah teks terpotong ke baris baru */
+    margin-left: 10px;
+    white-space: nowrap;
 }
 
 /* Panel menu */
@@ -32,7 +32,6 @@
     width: 200px;
     height: 100%;
     background-color: #252525;
-    color: white;
     box-shadow: -1px 1px 17px 4px rgba(0,0,0,0.64);
     -webkit-box-shadow: -1px 1px 17px 4px rgba(0,0,0,0.64);
     -moz-box-shadow: -1px 1px 17px 4px rgba(0,0,0,0.64);
@@ -64,7 +63,6 @@
     padding: 10px 20px; /* Padding internal */
     box-sizing: border-box; /* Pastikan padding tidak mengubah ukuran elemen */
     width: 100%; /* Pastikan semua elemen memiliki lebar yang sama */
-
 }
 
 .side-panel ul li a:hover {

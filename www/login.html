@@ -6,6 +6,7 @@
     <meta name="keywords" content="login, tugas, tugasku" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="css/menu/login.css" />
+    <link rel="stylesheet" href="css/partials/popup-alert.css" />
     <title>Login TugasKu</title>
   </head>
   <body>
@@ -18,16 +19,17 @@
         <form id="loginForm" class="login-form">
           <input type="text" class="form-input" id="usernameLogin" placeholder="Username" />
           <input type="password" class="form-input" id="passwordLogin" placeholder="Password" />
-          <button type="submit" class="login-btn">Masuk</button>
+          <button id="login-btn" type="submit" class="login-btn">Masuk</button>
           <a href="register.html" class="login-link">Belum punya akun?</a>
         </form>
-        <div class="popup-overlay" id="popupLogin">
-          <div class="popup-box">
+        <div class="popup-container-alert" id="popupLogin">
+          <div class="popup-alert">
             Harap isi username dan password!
           </div>
         </div>
       </div>
     </div>
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
     <script src="js/login.js"></script>
   </body>
 </html>
