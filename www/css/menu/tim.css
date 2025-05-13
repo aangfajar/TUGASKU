@@ -2,50 +2,18 @@
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0); /* Hilangkan highlight pada link */
 }
 
-body {
-    margin: 0;
-    padding: 0;
-    font-family: Arial, sans-serif;
-    display: flex;
-    justify-content: center;
-    min-height: 100vh;
-    background-color: #191919;
-}
-
-.tim-container {
-    margin: 0;
-    margin-top: 60px; /* Tetap menjaga jarak dari atas */
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 90vw;
-    height: calc(100vh - 60px); /* Hitung tinggi yang tersisa dari viewport */
-    box-sizing: border-box; /* Pastikan padding tidak menambah ukuran elemen */
-}
-
-.tim-container h1 {
-    font-family: 'Quicksand', sans-serif;
-    font-weight: 700;
-    margin-top: 10px;
-    color: #ffffff;
-    font-size: 24px;
-    align-self: center; 
-    text-align: center; 
-}
-
 .container-card {
-    display: flex; /* Gunakan flexbox */
-    flex-wrap: wrap; /* Izinkan elemen turun ke baris baru */
-    overflow-y: auto; /* Aktifkan scroll vertikal */
-    overflow-x: hidden; /* Nonaktifkan scroll horizontal */
-    padding: 10px 0px; /* Tambahkan padding untuk estetika */
-    gap: 14px; /* Jarak antar card */
-    width: 100%; /* Lebar penuh */
-    min-height: 150px; /* Tinggi minimum container */
-    max-height: calc(100vh - 150px); /* Tinggi maksimum container */
-    box-sizing: border-box; /* Pastikan padding termasuk dalam ukuran elemen */
-    margin-bottom: 30px; /* Jarak dari elemen di bawahnya */
-    justify-content: flex-start; /* Mulai dari kiri tanpa ruang kosong besar */
-    align-content: flex-start; /* Pastikan card tetap berada di atas */
+    display: flex;
+    flex-wrap: wrap; 
+    overflow-y: auto; 
+    overflow-x: hidden; 
+    padding: 10px 0px; 
+    gap: 14px; 
+    width: 100%; 
+    min-height: 150px;
+    max-height: calc(100vh - 150px); 
+    box-sizing: border-box; 
+    margin-bottom: 30px; 
+    justify-content: flex-start;
+    align-content: flex-start;
 }

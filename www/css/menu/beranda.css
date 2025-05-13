@@ -2,55 +2,23 @@
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0); /* Hilangkan highlight pada link */
 }
 
-body {
-    margin: 0;
-    padding: 0;
-    font-family: Arial, sans-serif;
-    display: flex;
-    justify-content: center;
-    min-height: 100vh;
-    background-color: #191919;
-}
-
-.beranda-container {
-    margin: 0;
-    margin-top: 60px; /* Tetap menjaga jarak dari atas */
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 90vw;
-    height: calc(100vh - 60px); /* Hitung tinggi yang tersisa dari viewport */
-    box-sizing: border-box; /* Pastikan padding tidak menambah ukuran elemen */
-}
-
-.beranda-container h1 {
-    font-family: 'Quicksand', sans-serif;
-    font-weight: 700;
-    margin-top: 10px;
-    color: #ffffff;
-    font-size: 24px;
-    align-self: center; 
-    text-align: center; 
-}
-
 .lastseen-container {
-    display: flex; /* Gunakan flexbox untuk tata letak horizontal */
-    gap: 15px; /* Jarak antar card */
-    overflow-x: auto; /* Aktifkan scroll horizontal */
-    overflow-y: hidden; /* Nonaktifkan scroll vertikal */
-    white-space: nowrap; /* Mencegah elemen turun ke baris baru */
+    display: flex;
+    gap: 15px; 
+    overflow-x: auto; 
+    overflow-y: hidden; 
+    white-space: nowrap; 
     padding: 10px 0px;
     width: 100%;
-    box-sizing: border-box; /* Pastikan padding termasuk dalam ukuran elemen */
+    box-sizing: border-box;
     margin-bottom: 30px;
 }
 
 .upcoming-container {
     display: flex;
     width: 100%;
-    justify-content: center; /* Pusatkan card secara horizontal */
-    align-items: center; /* Pusatkan card secara vertikal */
+    justify-content: center; 
+    align-items: center; 
     padding: 10px 0px;
     margin-bottom: 30px;
 }
@@ -58,8 +26,8 @@ body {
 .info-tugas-container {
     display: flex;
     width: 100%;
-    justify-content: center; /* Pusatkan card secara horizontal */
-    align-items: center; /* Pusatkan card secara vertikal */
+    justify-content: center;
+    align-items: center; 
     padding: 10px 0px;
     margin-bottom: 30px;
 }

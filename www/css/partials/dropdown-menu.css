@@ -1,11 +1,11 @@
 /* Dropdown menu untuk card */
 .dropdown-menu-card {
-    display: none; /* Sembunyikan secara default */
-    position: absolute; /* Gunakan absolute untuk fleksibilitas posisi */
+    display: none; 
+    position: absolute; 
     top: var(--dropdown-top, 50px); /* Variabel untuk jarak dari atas, default 50px */
     left: var(--dropdown-left, auto); /* Variabel untuk jarak dari kiri, default auto */
     right: var(--dropdown-right, 0); /* Variabel untuk jarak dari kanan, default 0 */
-    background-color: #252525; /* Warna sesuai tema */
+    background-color: #252525; 
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Bayangan lembut */
     z-index: 1000;

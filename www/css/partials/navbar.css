@@ -40,7 +40,7 @@
 }
 
 .side-panel.open {
-    left: 0; /* Panel muncul di layar */
+    left: 0; 
 }
 
 .side-panel ul {
@@ -50,46 +50,48 @@
 }
 
 .side-panel ul li {
-    margin: 10px 0; /* Jarak antar item menu */
+    margin: 10px 0;
 }
 
 .side-panel ul li a {
-    display: flex; /* Elemen dalam baris horizontal */
-    align-items: center; /* Vertikal rata tengah */
+    display: flex; 
+    align-items: center;
     color: white;
-    text-decoration: none; /* Hilangkan garis bawah */
+    text-decoration: none; 
     font-size: 14px;
-    font-family: Arial, sans-serif; /* Font yang digunakan */
-    padding: 10px 20px; /* Padding internal */
-    box-sizing: border-box; /* Pastikan padding tidak mengubah ukuran elemen */
-    width: 100%; /* Pastikan semua elemen memiliki lebar yang sama */
+    font-family: Arial, sans-serif; 
+    padding: 10px 20px;
+    box-sizing: border-box; 
+    width: 100%; 
 }
 
 .side-panel ul li a:hover {
+    transition: .2s ease-in-out;
+    transition-delay: .1s;
     text-decoration: none;
     background-color: #737373;
     border-radius: 10px;
 }
 
 .side-panel ul li a.active {
-    background-color: #737373; /* Warna background untuk item aktif */
-    color: white; /* Warna teks */
-    border-radius: 10px; /* Sudut melengkung */
-    padding: 10px 20px; /* Padding internal */
-    box-sizing: border-box; /* Pastikan padding tidak mengubah ukuran elemen */
-    display: flex; /* Tetap sejajar dengan elemen lainnya */
-    align-items: center; /* Vertikal rata tengah */
-    width: 100%; /* Pastikan elemen aktif tetap mengikuti lebar menu */
+    background-color: #737373;
+    color: white;
+    border-radius: 10px;
+    padding: 10px 20px;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    width: 100%;
 }
 
 .menu-icon {
-    width: 20px; /* Ukuran ikon */
-    height: 20px; /* Ukuran ikon */
-    margin-right: 10px; /* Jarak antara ikon dan teks */
+    width: 20px;
+    height: 20px;
+    margin-right: 10px; 
 }
 
 .menu-text {
-    white-space: nowrap; /* Mencegah teks terpotong ke baris baru */
+    white-space: nowrap;
 }
 
 .link-logout {

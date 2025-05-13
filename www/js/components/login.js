@@ -6,12 +6,11 @@ $('#loginForm').on('submit', function (e) {
     const password = $('#passwordLogin').val().trim();
 
     if (username === '' || password === '') {
-        console.log('Username atau password kosong'); // Debugging
         showPopupErrorLogin('Harap isi username dan password!');
         return;
     }
 
-    window.location.href = 'beranda.html'; // Redirect jika validasi berhasil
+    window.location.href = 'page.html'; // Redirect jika validasi berhasil
 });
 
 // Event listener untuk menyembunyikan popup saat area luar diklik

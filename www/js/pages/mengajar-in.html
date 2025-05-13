@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Beranda</title>
-    <link rel="stylesheet" href="css/menu/beranda.css" />
+    <link rel="stylesheet" href="css/menu/mengajar-in.css" />
     <link rel="stylesheet" href="css/partials/navbar.css" />
     <link rel="stylesheet" href="css/partials/header.css" />
     <link rel="stylesheet" href="css/partials/label-p.css" />
@@ -18,7 +18,7 @@
         <div class="header">
             <div class="navbar">
                 <img id="menu-icon" src="img/icon-menu.png" alt="Menu Icon" />
-                <span id="menu-label">Beranda</span>
+                <span id="menu-label">Mengajar</span>
             </div>
             <div class="profile-menu">
                 <img id="profile-icon" src="img/icon-profile.jpg" alt="Profile Icon" />
@@ -35,7 +35,7 @@
                 </a>
             </li>
             <li>
-                <a href="mengajar.html">
+                <a href="mengajar.html" class="active">
                 <img src="img/icon-mengajar.png" alt="Mengajar Icon" class="menu-icon">
                 <span class="menu-text">Mengajar</span>
                 </a>
@@ -66,54 +66,20 @@
             </li>
             </ul>
         </nav>
-        <div class="beranda-container">
-            <h1>
-                <!-- time of day teko js -->
-            </h1>
-            <p class="label-p">
-                <img src="img/icon-lastseen.png" alt="Lastseen Icon" class="icon-label" />
-                Terakhir dilihat
-            </p>
-            <div class="lastseen-container">
-                <div class="card-kecil-kosong" id="card-kecil-kosong">
-                    <div class="card-kecil-cover">
-                        <img src="img/icon-add.png" alt="Add Icon" class="card-add-icon">
-                    </div>
-                    <p>Halaman baru</p>
-                </div>
-                <div class="dropdown-menu-card" id="dropdownMenu" style="--dropdown-top: 230px; --dropdown-left: 125px;" >
-                    <a href="set-profile.html">
-                        <img src="img/icon-mengajar-abu.png" alt="" class="icon-dropdown" />
-                        Mengajar
-                    </a>
-                    <a href="set-profile.html">
-                        <img src="" alt="">
-                        Kelas
-                    </a>
-                    <a href="set-profile.html">
-                        <img src="" alt="">
-                        Tim
-                    </a>
-                </div>
+        <div class="menu-in-container">
+            <div class="cover-in">
+                <!-- Konten lainnya -->
+                 <div class="infoKelas-container">
+                    <h2>Pweb TIF B-pg</h2>
+                    <p>pemrograman web 24/25</p>
+                 </div>
             </div>
-            <p class="label-p">
-                <img src="img/icon-calender-abu.png" alt="Lastseen Icon" class="icon-label" />
-                Aktivitas mendatang
-            </p>
-            <div class="upcoming-container">
-                <div class="card-panjang-kosong">
-                    <p>Tidak ada aktivitas 3 hari mendatang</p>
-                    <a href="#" class="add-activity-link">+ Aktivitas baru</a>
-                </div>
-            </div>
-            <p class="label-p">
-                <img src="img/icon-itask-abu.png" alt="iTask Icon" class="icon-label" />
-                Informasi tugas
-            </p>
-            <div class="info-tugas-container">
-                <div class="card-panjang-kosong">
-                    <p>Tidak ada tugas yang di terima</p>
-                </div>
+            <div class="horizontal-menu">
+                <ul class="menu-list-horizontal">
+                    <li><a href="forum.html" class="active">Forum</a></li>
+                    <li><a href="tugas-kelas.html">Tugas Kelas</a></li>
+                    <li><a href="orang.html">Orang</a></li>
+                </ul>
             </div>
         </div>
     </div>

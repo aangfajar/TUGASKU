@@ -20,7 +20,7 @@ $('#registerForm').on('submit', function (e) {
     }
 
     // Jika validasi berhasil
-    window.location.href = 'index.html'; // Redirect ke halaman login
+    window.location.href = 'login.html'; // Redirect ke halaman login
 });
 
 // Event listener untuk menyembunyikan popup saat area luar diklik
