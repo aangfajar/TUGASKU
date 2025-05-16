@@ -1,4 +1,4 @@
-
+export function showDropdown() {
 const $cardKecilKosong = $('#card-kecil-kosong');
 const $dropdownMenu = $('#dropdownMenu');
 
@@ -14,3 +14,4 @@ $(document).on('click', function (e) {
         $dropdownMenu.hide(); // Sembunyikan dropdown
     }
 });
+};

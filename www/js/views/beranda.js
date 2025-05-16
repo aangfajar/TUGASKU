@@ -1,11 +1,21 @@
-<h1>
+import { showDropdown } from '../components/dropdown-menu.js';
+import { showGreeting } from '../components/timeOfDay.js';
+
+export default () => {
+  setTimeout(() => {
+    showDropdown();
+    showGreeting();
+  }, 0);
+
+  return `
+  <h1>
     <!-- time of day teko js -->
-</h1>
-<p class="label-p">
+  </h1>
+  <p class="label-p">
     <img src="img/icon-lastseen.png" alt="Lastseen Icon" class="icon-label" />
     Terakhir dilihat
-</p>
-<div class="lastseen-container">
+  </p>
+  <div class="lastseen-container">
     <div class="card-kecil-kosong" id="card-kecil-kosong">
         <div class="card-kecil-cover">
             <img src="img/icon-add.png" alt="Add Icon" class="card-add-icon">
@@ -26,23 +36,25 @@
             Tim
         </a>
     </div>
-</div>
-<p class="label-p">
+  </div>
+  <p class="label-p">
     <img src="img/icon-calender-abu.png" alt="Lastseen Icon" class="icon-label" />
     Aktivitas mendatang
-</p>
-<div class="upcoming-container">
+  </p>
+  <div class="upcoming-container">
     <div class="card-panjang-kosong">
         <p>Tidak ada aktivitas 3 hari mendatang</p>
         <a href="#" class="add-activity-link">+ Aktivitas baru</a>
     </div>
-</div>
-<p class="label-p">
+  </div>
+  <p class="label-p">
     <img src="img/icon-itask-abu.png" alt="iTask Icon" class="icon-label" />
     Informasi tugas
-</p>
-<div class="info-tugas-container">
+  </p>
+  <div class="info-tugas-container">
     <div class="card-panjang-kosong">
         <p>Tidak ada tugas yang di terima</p>
     </div>
-</div>
+  </div>`;
+};
+ 

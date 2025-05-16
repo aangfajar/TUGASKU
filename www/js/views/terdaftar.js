@@ -1,0 +1,27 @@
+import { showDropdown } from '../components/dropdown-menu.js';
+import { showGreeting } from '../components/timeOfDay.js';
+
+export default () => {
+    setTimeout(() => {
+    showDropdown();
+    showGreeting();
+    }, 0);
+
+    return `
+    <h1>
+        <!-- time of day teko js -->
+    </h1>
+    <p class="label-p">
+        <img src="img/icon-terdaftar-abu.png" alt="Terdaftar Icon" class="icon-label" />
+        Kelas terdaftar anda
+    </p>
+    <div class="container-card">
+        <div class="card-kecil-kosong">
+            <div class="card-kecil-cover">
+                <img src="img/icon-add.png" alt="Add Icon" class="card-add-icon">
+            </div>
+            <p>Kelas baru</p>
+        </div>
+    </div>
+    `;
+}

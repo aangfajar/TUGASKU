@@ -9,14 +9,14 @@
     overflow-y: hidden; 
     white-space: nowrap; 
     padding: 10px 0px;
-    width: 100%;
+    width: 90%;
     box-sizing: border-box;
     margin-bottom: 30px;
 }
 
 .upcoming-container {
     display: flex;
-    width: 100%;
+    width: 90%;
     justify-content: center; 
     align-items: center; 
     padding: 10px 0px;
@@ -25,7 +25,7 @@
 
 .info-tugas-container {
     display: flex;
-    width: 100%;
+    width: 90%;
     justify-content: center;
     align-items: center; 
     padding: 10px 0px;

@@ -1,6 +1,6 @@
-$(document).on('DOMNodeInserted', '.container', function () {
-    const $greetingElement = $('.container h1');
-    if ($greetingElement.length > 0) {
+export function showGreeting() {
+    const greetingElement = document.querySelector('.container h1');
+    if (greetingElement) {
         const currentHour = new Date().getHours();
 
         let greetingMessage = 'Hello';
@@ -12,6 +12,8 @@ $(document).on('DOMNodeInserted', '.container', function () {
             greetingMessage = 'Good Evening,';
         }
 
-        $greetingElement.text(greetingMessage);
+        greetingElement.textContent = greetingMessage;
     }
-});
+}
+
+window.showGreeting = showGreeting;
