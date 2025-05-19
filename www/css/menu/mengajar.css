@@ -3,7 +3,6 @@
 }
 
 .container-card {
-    background-color: antiquewhite;
     display: flex; 
     flex-wrap: wrap; 
     overflow-y: auto; 
