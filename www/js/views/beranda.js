@@ -1,27 +1,22 @@
+import { cardLastSeen } from '../components/cBeranda.js';
+import { cardUpComing } from '../components/cBeranda.js';
+import { cardITask } from '../components/cBeranda.js';
 import { showDropdown } from '../components/dropdown-menu.js';
-import { showGreeting } from '../components/timeOfDay.js';
+import { sapaanWaktu } from '../components/timeOfDay.js';
 
 export default () => {
   setTimeout(() => {
     showDropdown();
-    showGreeting();
   }, 0);
 
   return `
-  <h1>
-    <!-- time of day teko js -->
-  </h1>
+  ${sapaanWaktu()}
   <p class="label-p">
     <img src="img/icon-lastseen.png" alt="Lastseen Icon" class="icon-label" />
     Terakhir dilihat
   </p>
   <div class="lastseen-container">
-    <div class="card-kecil-kosong" id="card-kecil-kosong">
-        <div class="card-kecil-cover">
-            <img src="img/icon-add.png" alt="Add Icon" class="card-add-icon">
-        </div>
-        <p>Halaman baru</p>
-    </div>
+    ${cardLastSeen()}
     <div class="dropdown-menu-card" id="dropdownMenu" style="--dropdown-top: 230px; --dropdown-left: 125px;" >
         <a href="set-profile.html">
             <img src="img/icon-mengajar-abu.png" alt="" class="icon-dropdown" />
@@ -42,19 +37,14 @@ export default () => {
     Aktivitas mendatang
   </p>
   <div class="upcoming-container">
-    <div class="card-panjang-kosong">
-        <p>Tidak ada aktivitas 3 hari mendatang</p>
-        <a href="#" class="add-activity-link">+ Aktivitas baru</a>
-    </div>
+    ${cardUpComing()}
   </div>
   <p class="label-p">
     <img src="img/icon-itask-abu.png" alt="iTask Icon" class="icon-label" />
     Informasi tugas
   </p>
   <div class="info-tugas-container">
-    <div class="card-panjang-kosong">
-        <p>Tidak ada tugas yang di terima</p>
-    </div>
+    ${cardITask()}
   </div>`;
 };
  

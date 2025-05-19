@@ -8,7 +8,7 @@ export default () => {
     }, 0);
 
     return `
-    <h1>
+    <h1 id="greeting">
     <!-- time of day teko js -->
     </h1>
     <p class="label-p">

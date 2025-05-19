@@ -1,19 +1,27 @@
-export function showGreeting() {
-    const greetingElement = document.querySelector('.container h1');
-    if (greetingElement) {
-        const currentHour = new Date().getHours();
+export const sapaanWaktu = () => `
+  <h1 id="greeting">
+  Hello
+  </h1>
+`;
 
-        let greetingMessage = 'Hello';
-        if (currentHour >= 5 && currentHour < 12) {
-            greetingMessage = 'Good Morning,';
-        } else if (currentHour >= 12 && currentHour < 18) {
-            greetingMessage = 'Good Afternoon,';
-        } else {
-            greetingMessage = 'Good Evening,';
-        }
-
-        greetingElement.textContent = greetingMessage;
+export const showGreeting = () => {
+  const el = document.getElementById('greeting');
+    if (!el) {
+        return;
     }
-}
 
-window.showGreeting = showGreeting;
+  const hour = new Date().getHours();
+  let msg = 'Hello';
+
+  if (hour >= 5 && hour < 12){
+    msg = 'Good Morning,';
+}
+  else if (hour >= 12 && hour < 18){
+     msg = 'Good Afternoon,';
+  }
+  else{
+    msg = 'Good Evening,';
+  }
+
+  el.textContent = msg;
+};

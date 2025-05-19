@@ -24,7 +24,7 @@ body {
     box-sizing: border-box;
 }
 
-.container h1 {
+#greeting {
     font-family: 'Quicksand', sans-serif;
     font-weight: 700;
     margin-top: 10px;
