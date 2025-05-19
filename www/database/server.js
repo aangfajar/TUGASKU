@@ -19,8 +19,8 @@ app.post('/register', (req, res) => {
     const hashedPassword = bcrypt.hashSync(password, 10);
 
     // Simpan ke database
-    const sql = 'INSERT INTO users (username, nama, password) VALUES (?, ?, ?)';
-    db.query(sql, [username, hashedPassword], (err, result) => {
+    const sql = 'INSERT INTO user (email, username, password) VALUES (?, ?, ?)';
+    db.query(sql, [email, username, hashedPassword], (err, result) => {
         if (err) {
             console.error(err);
             return res.status(500).send('Gagal mendaftarkan pengguna.');
@@ -44,7 +44,7 @@ app.post('/login',
         const { username, password } = req.body;
 
         // Periksa username di database
-        const sql = 'SELECT * FROM users WHERE username = ?';
+        const sql = 'SELECT * FROM user WHERE username = ?';
         db.query(sql, [username], (err, results) => {
             if (err) {
                 console.error(err);
@@ -63,7 +63,7 @@ app.post('/login',
             }
 
             // Buat token JWT
-            const token = jwt.sign({ id: user.id, username: user.username }, SECRET_KEY, { expiresIn: '1h' });
+            const token = jwt.sign({ id: user.id_user, username: user.username }, SECRET_KEY, { expiresIn: '1h' });
 
             res.json({ message: 'Login berhasil!', token }); // Kirim token ke klien
         });
@@ -86,9 +86,9 @@ app.get('/profile', authenticateToken, (req, res) => {
 });
 
 
-app.use(express.static(path.join(__dirname, 'www')));
+app.use(express.static(path.join(__dirname, '..')));
 app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, 'www', 'index.html'));
+    res.sendFile(path.join(__dirname, '..', 'index.html'));
 });
 
 // Jalankan server
