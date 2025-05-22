@@ -7,6 +7,7 @@ $('#loginForm').on('submit', function (e) {
         showPopupErrorLogin('Harap isi username dan password!');
         return;
     }
+    window.location.href = 'page.html';
     // Kirim request ke backend
     fetch('/login', {
         method: 'POST',

@@ -1,15 +1,17 @@
 import Beranda from './views/beranda.js';
 import Mengajar from './views/mengajar.js';
-import terdaftar from './views/terdaftar.js';
+import Terdaftar from './views/terdaftar.js';
 import Tim from './views/tim.js';
 import Tugas from './views/tugas.js';
+import InClassMengajar from './views/inClassMengajar.js';
 
 const routes = {
   '/beranda': Beranda,
   '/mengajar': Mengajar,
-  '/terdaftar': terdaftar,
+  '/terdaftar': Terdaftar,
   '/tim': Tim,
   '/tugas': Tugas,
+  '/inClassMengajar':InClassMengajar,
 };
 
 const updateMenuLabel = (path) => {
@@ -20,12 +22,13 @@ const updateMenuLabel = (path) => {
     '/terdaftar': 'Terdaftar',
     '/tim': 'Tim',
     '/tugas': 'Tugas',
+    '/inClassMengajar': 'Mengajar',
   };
   menuLabel.textContent = labels[path] || 'Halaman Tidak Ditemukan';
 };
 
 const router = async () => {
-  const path = location.hash.slice(1).toLowerCase() || '/beranda';
+  const path = location.hash.slice(1) || '/beranda';
   console.log('Current hash:', location.hash);
   console.log('Current path:', path);
   const view = routes[path] || (() => '<h1>404 - Halaman tidak ditemukan</h1>');

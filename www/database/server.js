@@ -19,7 +19,7 @@ app.post('/register', (req, res) => {
     const hashedPassword = bcrypt.hashSync(password, 10);
 
     // Simpan ke database
-    const sql = 'INSERT INTO user (email, username, password) VALUES (?, ?, ?)';
+    const sql = 'INSERT INT O user (email, username, password) VALUES (?, ?, ?)';
     db.query(sql, [email, username, hashedPassword], (err, result) => {
         if (err) {
             console.error(err);

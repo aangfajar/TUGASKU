@@ -1,12 +1,13 @@
-import { cardLastSeen } from '../components/cBeranda.js';
+import { cardLastSeenKosong } from '../components/cBeranda.js';
 import { cardUpComing } from '../components/cBeranda.js';
 import { cardITask } from '../components/cBeranda.js';
 import { showDropdown } from '../components/dropdown-menu.js';
-import { sapaanWaktu } from '../components/timeOfDay.js';
+import { sapaanWaktu, showGreeting } from '../components/timeOfDay.js';
 
 export default () => {
   setTimeout(() => {
     showDropdown();
+    showGreeting();
   }, 0);
 
   return `
@@ -16,21 +17,7 @@ export default () => {
     Terakhir dilihat
   </p>
   <div class="lastseen-container">
-    ${cardLastSeen()}
-    <div class="dropdown-menu-card" id="dropdownMenu" style="--dropdown-top: 230px; --dropdown-left: 125px;" >
-        <a href="set-profile.html">
-            <img src="img/icon-mengajar-abu.png" alt="" class="icon-dropdown" />
-            Mengajar
-        </a>
-        <a href="set-profile.html">
-            <img src="" alt="">
-            Kelas
-        </a>
-        <a href="set-profile.html">
-            <img src="" alt="">
-            Tim
-        </a>
-    </div>
+    ${cardLastSeenKosong()}
   </div>
   <p class="label-p">
     <img src="img/icon-calender-abu.png" alt="Lastseen Icon" class="icon-label" />
@@ -45,6 +32,6 @@ export default () => {
   </p>
   <div class="info-tugas-container">
     ${cardITask()}
-  </div>`;
+  </div>
+  `;
 };
- 
