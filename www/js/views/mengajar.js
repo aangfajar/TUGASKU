@@ -1,5 +1,6 @@
+import { buttonCreateClass, cardClassMengajarKosong ,cardClassMengajarIsi} from '../components/cMengajar.js';
 import { showDropdown } from '../components/dropdown-menu.js';
-import { showGreeting } from '../components/timeOfDay.js';
+import { sapaanWaktu, showGreeting } from '../components/timeOfDay.js';
 
 export default () => {
     setTimeout(() => {
@@ -8,26 +9,17 @@ export default () => {
     }, 0);
 
     return `
-    <h1 id="greeting">
-    <!-- time of day teko js -->
-    </h1>
-    <p class="label-p">
-        <img src="img/icon-mengajar-abu.png" alt="Mengajar Icon" class="icon-label" />
-        Kelas mengajar anda
-    </p>
+    ${sapaanWaktu()}
+    <div class="container-label">
+        <p class="label-p">
+            <img src="img/icon-mengajar-abu.png" alt="Mengajar Icon" class="icon-label" />
+            Kelas mengajar anda
+        </p>
+        <!-- BUTTON ADD CLASS JIKA NO DEFAULT -->
+        ${buttonCreateClass()}
+    </div>
     <div class="container-card">
-        <div class="card-kecil-kosong">
-            <div class="card-kecil-cover">
-                <img src="img/icon-add.png" alt="Add Icon" class="card-add-icon">
-            </div>
-            <p>Kelas mengajar baru</p>
-        </div>
-        <div class="card-kecil-kosong">
-            <div class="card-kecil-cover">
-                <img src="img/icon-profile.jpg" alt="Card Profile Icon" class="card-profile-icon">
-            </div>
-            <p>Kelas mengajar baru</p>
-        </div>
+        ${cardClassMengajarIsi()}
     </div>
     `;
 }

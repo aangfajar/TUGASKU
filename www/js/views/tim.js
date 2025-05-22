@@ -1,5 +1,6 @@
+import { buttonAddTim, cardTimIsi, cardTimKosong } from '../components/cTim.js';
 import { showDropdown } from '../components/dropdown-menu.js';
-import { showGreeting } from '../components/timeOfDay.js';
+import { sapaanWaktu, showGreeting } from '../components/timeOfDay.js';
 
 export default () => {
     setTimeout(() => {
@@ -8,32 +9,16 @@ export default () => {
     }, 0);
     
     return `
-    <h1 id="greeting">
-        <!-- time of day teko js -->
-    </h1>
-
-    <p class="label-p">
-        <img src="img/icon-tim-abu.png" alt="Tim Icon" class="icon-label" />
-        Tim anda
-    </p>
-    
+    ${sapaanWaktu()}
+    <div class="container-label">
+        <p class="label-p">
+            <img src="img/icon-mengajar-abu.png" alt="Mengajar Icon" class="icon-label" />
+            Kelas mengajar anda
+        </p>
+        <!-- BUTTON ADD CLASS JIKA NO DEFAULT -->
+    </div>
     <div class="container-card">
-        <div class="card-kecil-kosong" id="card-kecil-kosong">
-            <div class="card-kecil-cover">
-                <img src="img/icon-add.png" alt="Add Icon" class="card-add-icon">
-            </div>
-            <p>Buat Tim/join Tim</p>
-        </div>
-        <div class="dropdown-menu-card" id="dropdownMenu" style="--dropdown-top: 230px; --dropdown-left: 125px;" >
-            <a href="set-profile.html">
-                <img src="img/icon-mengajar-abu.png" alt="" class="icon-dropdown" />
-                Buat Tim
-            </a>
-            <a href="set-profile.html">
-                <img src="" alt="">
-                Join
-            </a>
-        </div>
+        ${cardTimKosong()}
     </div>
     `;
 }
