@@ -3,29 +3,46 @@ const bodyParser = require('body-parser');
 const bcrypt = require('bcryptjs');
 const db = require('./db');
 const jwt = require('jsonwebtoken'); 
-const SECRET_KEY = 'your_secret_key'; 
 const { body, validationResult } = require('express-validator');
 const path = require('path');
+require('dotenv').config();
+const SECRET_KEY = process.env.SECRET_KEY || 'default_secret_key';
 
 const app = express();
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 // Rute untuk registrasi
-app.post('/register', (req, res) => {
+app.post('/register', [
+    body('email').isEmail().withMessage('Format email tidak valid.'),
+    body('username').isLength({ min: 3 }).withMessage('Username minimal 3 karakter.'),
+    body('password').isLength({ min: 6 }).withMessage('Password minimal 6 karakter.')
+], (req, res) => {
+    const errors = validationResult(req);
+    if (!errors.isEmpty()) {
+        return res.status(400).json({ errors: errors.array() });
+    }
     const {email, username, password } = req.body;
-
-    // Enkripsi password
-    const hashedPassword = bcrypt.hashSync(password, 10);
-
-    // Simpan ke database
-    const sql = 'INSERT INTO user (email, username, password) VALUES (?, ?, ?)';
-    db.query(sql, [email, username, hashedPassword], (err, result) => {
+    // Cek duplikasi email/username
+    db.query('SELECT * FROM user WHERE email = ? OR username = ?', [email, username], (err, results) => {
         if (err) {
             console.error(err);
             return res.status(500).send('Gagal mendaftarkan pengguna.');
         }
-        res.send('Registrasi berhasil!');
+        if (results.length > 0) {
+            return res.status(400).send('Email atau username sudah terdaftar.');
+        }
+        // Enkripsi password
+        const hashedPassword = bcrypt.hashSync(password, 10);
+        // Simpan ke database
+        const sql = 'INSERT INTO user (email, username, password) VALUES (?, ?, ?)';
+        db.query(sql, [email, username, hashedPassword], (err, result) => {
+            if (err) {
+                console.error(err);
+                return res.status(500).send('Gagal mendaftarkan pengguna.');
+            }
+            res.send('Registrasi berhasil!');
+        });
     });
 });
 

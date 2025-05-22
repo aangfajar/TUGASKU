@@ -118,5 +118,17 @@
     <script type="module" src="js/main.js"></script>
     <script src="js/components/navbar.js"></script>
     <script src="js/components/timeOfDay.js"></script>
+    <script>
+      // Proteksi halaman: redirect ke login jika tidak ada token
+      if (!localStorage.getItem('token')) {
+        window.location.href = 'login.html';
+      }
+      // Logout handler
+      $(document).on('click', '.link-logout', function(e) {
+        e.preventDefault();
+        localStorage.removeItem('token');
+        window.location.href = 'login.html';
+      });
+    </script>
   </body>
 </html>
