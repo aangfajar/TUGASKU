@@ -2,12 +2,12 @@ import { buttonCreateClass, cardClassMengajarKosong ,cardClassMengajarIsi} from 
 import { showDropdown } from '../components/dropdown-menu.js';
 import { sapaanWaktu, showGreeting } from '../components/timeOfDay.js';
 
-export default () => {
+export default() => {
     setTimeout(() => {
-    showDropdown();
-    showGreeting();
+        showDropdown();
+        showGreeting();
     }, 0);
-
+    
     return `
     ${sapaanWaktu()}
     <div class="container-label">

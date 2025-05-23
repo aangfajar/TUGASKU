@@ -19,7 +19,7 @@ app.post('/register', (req, res) => {
     const hashedPassword = bcrypt.hashSync(password, 10);
 
     // Simpan ke database
-    const sql = 'INSERT INT O user (email, username, password) VALUES (?, ?, ?)';
+    const sql = 'INSERT INTO user (email, username, password) VALUES (?, ?, ?)';
     db.query(sql, [email, username, hashedPassword], (err, result) => {
         if (err) {
             console.error(err);
@@ -69,6 +69,21 @@ app.post('/login',
         });
     }
 );
+
+//DATA KELAS
+app.get('/cMengajar', (req, res) => {
+  const query = 'SELECT * FROM kelas';
+
+  db.query(query, (err, results) => {
+    if (err) {
+      console.error('❌ Error saat ambil data:', err);
+      return res.status(500).json({ error: 'Gagal ambil data kelas' });
+    }
+
+    res.json(results);
+  });
+});
+
 
 function authenticateToken(req, res, next) {
     const token = req.headers['authorization']; // Ambil token dari header Authorization
