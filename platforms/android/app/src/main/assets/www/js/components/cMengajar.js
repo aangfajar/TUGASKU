@@ -21,30 +21,30 @@ export function cardClassMengajarKosong(){
     `;
 }
 
-// export async function cardClassMengajarIsi() {
-//   let html = `
-//     <div id="anjay" class="card-kecil-isi">
-//       Loading...
-//     </div>
-//   `;
+export async function cardClassMengajarIsi() {
+  let html = `
+    <div id="anjay" class="card-kecil-isi">
+      Loading...
+    </div>
+  `;
 
-//   const res = await fetch('http://localhost:3000/cMengajar');
-//   const data = await res.json();
+  const res = await fetch('http://localhost:3000/cMengajar');
+  const data = await res.json();
 
-//   html = data.map(kelas => `
-//     <div class="card-kecil-isi" onclick="location.hash = '#/inClassMengajar'">
-//       <div class="card-kecil-cover-isi" style="background-color:#${kelas.cover_warna}">
-//           <img src="img/icon-profile.jpg" alt="Card Profile Icon" class="card-profile-icon">
-//       </div>
-//       <div class="card-kecil-isi-text">
-//           <p class="title-class">${kelas.nama_kelas}</p>
-//           <p class="mapel-class">${kelas.mapel}</p>
-//       </div>
-//     </div>
-//   `).join('');
+  html = data.map(kelas => `
+    <div class="card-kecil-isi" onclick="location.hash = '#/inClassMengajar'">
+      <div class="card-kecil-cover-isi" style="background-color:#${kelas.cover_warna}">
+          <img src="img/icon-profile.jpg" alt="Card Profile Icon" class="card-profile-icon">
+      </div>
+      <div class="card-kecil-isi-text">
+          <p class="title-class">${kelas.nama_kelas}</p>
+          <p class="mapel-class">${kelas.mapel}</p>
+      </div>
+    </div>
+  `).join('');
 
-//   return html;
-// }
+  return html;
+}
 
 export function buttonCreateClass(){
     return `
@@ -55,19 +55,20 @@ export function buttonCreateClass(){
     `;
 }
 
-export function cardClassMengajarIsi(){
-    return `
-    <div class="card-kecil-isi" onclick="location.hash = '#/inClassMengajar'">
-        <div class="card-kecil-cover-isi">
-            <img src="img/icon-profile.jpg" alt="Card Profile Icon" class="card-profile-icon">
-        </div>
-        <div class="card-kecil-isi-text">
-            <p class="title-class">Praktikum ASD</p>
-            <p class="mapel-class">Algoritma Struktur Data 24/25</p>
-        </div>
-    </div>
-    `;
-}
+// export function cardClassMengajarIsi(){
+//     return `
+//     <div class="card-kecil-isi" onclick="location.hash = '#/inClassMengajar'">
+//         <div class="card-kecil-cover-isi">
+//             <img src="img/icon-profile.jpg" alt="Card Profile Icon" class="card-profile-icon">
+//         </div>
+//         <div class="card-kecil-isi-text">
+//             <p class="title-class">Praktikum ASD</p>
+//             <p class="mapel-class">Algoritma Struktur Data 24/25</p>
+//         </div>
+//     </div>
+//     `;
+// }
+
 
 
 // export function cardClassMengajarIsi() {

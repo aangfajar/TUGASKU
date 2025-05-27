@@ -1,31 +1,31 @@
 .card-panjang-kosong {
-    background-color: #252525; /* Warna latar belakang card */
-    width: 100%; /* Lebar penuh */
-    height: 120px; /* Tinggi card */
-    border-radius: 10px; /* Sudut melengkung */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Bayangan lembut */
+    background-color: #252525;
+    width: 100%; 
+    height: 120px; 
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); 
     display: flex;
-    flex-direction: column; /* Tata letak vertikal */
-    justify-content: center; /* Pusatkan konten secara vertikal */
-    align-items: center; /* Pusatkan konten secara horizontal */
-    text-align: center; /* Teks rata tengah */
-    color: #737373; /* Warna teks */
+    flex-direction: column;
+    justify-content: center; 
+    align-items: center; 
+    text-align: center;
+    color: #737373; 
 }
 
 .card-panjang-kosong p {
     margin: 0;
-    font-size: 11px; /* Ukuran teks */
-    color: #737373; /* Warna teks */
+    font-size: 11px;
+    color: #737373; 
 }
 
 .add-activity-link {
-    margin-top: 5px; /* Jarak dari teks di atasnya */
-    font-size: 11px; /* Ukuran teks */
-    color: #007bff; /* Warna biru untuk link */
-    text-decoration: none; /* Hilangkan garis bawah */
+    margin-top: 5px; 
+    font-size: 11px;
+    color: #007bff; 
+    text-decoration: none; 
     cursor: pointer;
 }
 
 .add-activity-link:hover {
-    text-decoration: underline; /* Tambahkan garis bawah saat hover */
+    text-decoration: underline; 
 }

@@ -5,7 +5,7 @@ const db = mysql.createConnection({
     host: 'localhost', // Ganti dengan host database Anda
     user: 'root',      // Ganti dengan username MySQL Anda
     password: '',      // Ganti dengan password MySQL Anda
-    database: 'tugasku' // Nama database
+    database: 'tugaskuanjay' // Nama database
 });
 
 // Hubungkan ke database

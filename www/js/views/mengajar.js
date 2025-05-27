@@ -1,15 +1,17 @@
 import { buttonCreateClass, cardClassMengajarKosong ,cardClassMengajarIsi} from '../components/cMengajar.js';
 import { showDropdown } from '../components/dropdown-menu.js';
-import { sapaanWaktu, showGreeting } from '../components/timeOfDay.js';
+import { showGreeting } from '../components/timeOfDay.js';
 
-export default() => {
+export default async () => {
     setTimeout(() => {
         showDropdown();
-        showGreeting();
     }, 0);
-    
+        
+    const greet = await showGreeting()
+    const cards = await cardClassMengajarIsi();
+
     return `
-    ${sapaanWaktu()}
+    ${greet}
     <div class="container-label">
         <p class="label-p">
             <img src="img/icon-mengajar-abu.png" alt="Mengajar Icon" class="icon-label" />
@@ -19,7 +21,7 @@ export default() => {
         ${buttonCreateClass()}
     </div>
     <div class="container-card">
-        ${cardClassMengajarIsi()}
+    ${cardClassMengajarIsi()}
     </div>
     `;
 }

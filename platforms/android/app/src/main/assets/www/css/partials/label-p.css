@@ -1,3 +1,10 @@
+.container-label{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: auto;
+}
+
 .label-p{
     display: flex;
     align-self: flex-start;
@@ -9,4 +16,5 @@
     width: 12px; /* Ukuran lebar gambar */
     height: 12px; /* Ukuran tinggi gambar */
     margin-right: 10px;
+    margin-left: 20px;
 }

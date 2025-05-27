@@ -1,0 +1,37 @@
+/* Dropdown menu untuk card */
+.dropdown-menu-card {
+    display: none; 
+    position: absolute; 
+    top: var(--dropdown-top, 50px); /* Variabel untuk jarak dari atas, default 50px */
+    left: var(--dropdown-left, auto); /* Variabel untuk jarak dari kiri, default auto */
+    right: var(--dropdown-right, 0); /* Variabel untuk jarak dari kanan, default 0 */
+    background-color: #252525; 
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Bayangan lembut */
+    z-index: 100;
+    width: 100px;
+    padding: 5px;
+    min-width: 100px;
+}
+
+/* Dropdown menu items */
+.dropdown-menu-card a {
+    display: flex;
+    align-items: center;
+    padding: 5px 5px;
+    color: #737373;
+    text-decoration: none;
+    font-size: 11px;
+    font-family: Arial, sans-serif;
+}
+
+.icon-dropdown {
+    width: 14px; /* Ukuran lebar gambar */
+    height: 14px; /* Ukuran tinggi gambar */
+    margin-right: 10px;
+}
+
+.dropdown-menu-card a:hover {
+    border-radius: 5px;
+    background-color: #191919; /* Warna saat hover */
+}
