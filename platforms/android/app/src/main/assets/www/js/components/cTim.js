@@ -1,7 +1,7 @@
 //=========================== FUNGSI =======================
-export function showLastSeen() {
-    
-}
+
+
+
 
 
 
@@ -9,32 +9,28 @@ export function showLastSeen() {
 
 
 //=========================== KOMPONEN =======================
-export function cardLastSeenKosong() {
+export function cardTimKosong(){
     return `
     <div class="card-kecil-kosong" id="card-kecil-kosong">
         <div class="card-kecil-cover">
             <img src="img/icon-add.png" alt="Add Icon" class="card-add-icon">
         </div>
-        <p>Halaman baru</p>
+        <p>Buat Tim/join Tim</p>
     </div>
     <div class="dropdown-menu-card" id="dropdownMenu" style="--dropdown-top: 230px; --dropdown-left: 125px;" >
         <a href="set-profile.html">
-            <img src="img/icon-mengajar-abu.png" alt="" class="icon-dropdown" />
-            Mengajar
+            <img src="img/icon-add-class.png" alt="" class="icon-dropdown" />
+            Buat Tim
         </a>
         <a href="set-profile.html">
-            <img src="img/icon-terdaftar-abu.png" alt="" class="icon-dropdown" />
-            Kelas
-        </a>
-        <a href="set-profile.html">
-            <img src="img/icon-tim-abu.png" alt="" class="icon-dropdown" />
-            Tim
+            <img src="img/icon-join.png" alt="" class="icon-dropdown" />
+            Masuk Tim
         </a>
     </div>
-    `;
+    `;  
 }
 
-export function cardLastSeenIsi() {
+export function cardTimIsi(){
     return `
     <div class="card-kecil-isi">
         <div class="card-kecil-cover-isi">
@@ -48,19 +44,21 @@ export function cardLastSeenIsi() {
     `;
 }
 
-export function cardUpComing() {
+export function buttonAddTim() {
     return `
-    <div class="card-panjang-kosong">
-        <p>Tidak ada aktivitas 3 hari mendatang</p>
-        <a href="#" class="add-activity-link">+ Aktivitas baru</a>
-    </div>
-    `;
-}
-
-export function cardITask() {
-    return `
-    <div class="card-panjang-kosong">
-        <p>Tidak ada tugas yang di terima</p>
+    <button class="button-createClass" id="button-createClass">
+        <img src="img/icon-add-class.png" alt="Add Icon" class="icon-button-createClass">
+        Tambah
+    </button>
+    <div class="dropdown-menu-card" id="dropdownMenu" style="--dropdown-top: 125px; --dropdown-left: 220px;" >
+        <a href="set-profile.html">
+            <img src="img/icon-add-class.png" alt="" class="icon-dropdown" />
+            Buat Tim
+        </a>
+        <a href="set-profile.html">
+            <img src="img/icon-join.png" alt="" class="icon-dropdown" />
+            Masuk Tim
+        </a>
     </div>
     `;
 }

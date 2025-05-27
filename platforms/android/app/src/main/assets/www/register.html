@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/menu/register.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/menu/register.css" />
+    <link rel="stylesheet" href="css/partials/popup-alert.css" />
     <title>Daftar Akun</title>
-</head>
-<body>
+  </head>
+  <body>
     <div class="main-wrapper">
       <div class="register-logo">
         <img src="img\logo hitam.png" alt="" width="290px" />
@@ -14,20 +15,43 @@
       <div class="register-container">
         <h2>Register</h2>
         <form id="registerForm" class="register-form">
-          <input type="text" class="form-input" id="emailRegister" placeholder="Email" />
-          <input type="text" class="form-input" id="usernameRegister" placeholder="Username" />
-          <input type="password" class="form-input" id="passwordRegister" placeholder="Password" />
-          <input type="text" class="form-input" id="pwConfirmRegister" placeholder="Konfirmasi Password" />
+          <input
+            type="text"
+            class="form-input"
+            id="emailRegister"
+            placeholder="Email"
+          />
+          <input
+            type="text"
+            class="form-input"
+            id="usernameRegister"
+            placeholder="Username"
+          />
+          <input
+            type="password"
+            class="form-input"
+            id="passwordRegister"
+            placeholder="Password"
+          />
+          <input
+            type="text"
+            class="form-input"
+            id="pwConfirmRegister"
+            placeholder="Konfirmasi Password"
+          />
           <button type="submit" class="register-btn">Daftar</button>
           <a href="login.html" class="register-link">Sudah punya akun?</a>
         </form>
-        <div class="popup-overlay" id="popupRegister">
-          <div class="popup-box">
-            Harap isi semua field!
-          </div>
+        <div class="popup-container-alert" id="popupRegister">
+          <div class="popup-alert">Harap isi semua field!</div>
         </div>
       </div>
     </div>
-    <script src="js/register.js"></script>
-</body>
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.js"
+      integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+      crossorigin="anonymous"
+    ></script>
+    <script src="js/components/register.js"></script>
+  </body>
 </html>
