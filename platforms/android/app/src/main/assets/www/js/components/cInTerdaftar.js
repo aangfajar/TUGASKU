@@ -9,7 +9,7 @@
 
 
 //=========================== KOMPONEN =======================
-export function innerClassContainerForum() {
+export function contForumTerdaftar() {
   return `
     <input class="pengumuman" type="text" placeholder="Umumkan sesuatu untuk kelas anda">
     <div class="container-label">
@@ -20,13 +20,13 @@ export function innerClassContainerForum() {
     </div>
     <div class="innerClass-container">
         <a class="card-list-tugas">
-        
+
         </a>
     </div>
   `;
 }
 
-export function innerClassContainerTugas() {
+export function contTugasTerdaftar() {
     return `
     <div class="container-label">
         <p class="label-p">
@@ -39,14 +39,14 @@ export function innerClassContainerTugas() {
             Buat
         </button>
     </div>
-    <div class="innerClass-container">
-        
+    <div class="innerClass-container-default">
+        Belum ada tugas yang di buat
     </div>
     `;
 }
 
 
-export function innerClassContainerOrang() {
+export function contOrangTerdaftar() {
     return `
     <div class="container-label">
         <p class="label-p">

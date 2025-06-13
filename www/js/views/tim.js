@@ -1,6 +1,6 @@
-import { buttonAddTim, cardTimIsi, cardTimKosong } from '../components/cTim.js';
-import { showDropdown } from '../components/dropdown-menu.js';
-import { showGreeting } from '../components/timeOfDay.js';
+import { buttonAddTim, cardTimIsi, cardTimKosong } from '../service/cTim.js';
+import { showDropdown } from '../partials/dropdown-menu.js';
+import { showGreeting } from '../partials/timeOfDay.js';
 
 export default async () => {
     setTimeout(() => {
@@ -13,8 +13,8 @@ export default async () => {
     ${greet}
     <div class="container-label">
         <p class="label-p">
-            <img src="img/icon-mengajar-abu.png" alt="Mengajar Icon" class="icon-label" />
-            Kelas mengajar anda
+            <img src="img/icon-tim-abu.png" alt="Mengajar Icon" class="icon-label" />
+            Tim anda
         </p>
         <!-- BUTTON ADD CLASS JIKA NO DEFAULT -->
         ${buttonAddTim()}

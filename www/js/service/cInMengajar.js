@@ -31,6 +31,11 @@ export function contForumMengajar() {
                 <p class="tanggal-list-tugas">Tenggat 07/04/2025</p>
             </div>
         </div>
+
+        <div class="detail-list-tugas">
+            
+        
+        </div>
     </div>
   `;
 }
@@ -43,8 +48,8 @@ export function contTugasMengajar() {
             Penugasan Anda
         </p>
         <!-- BUTTON ADD CLASS JIKA BUTUH -->
-        <button class="button-createClass" id="button-createClass">
-            <img src="img/icon-add-class.png" alt="Add Icon" class="icon-button-createClass">
+        <button class="button-addClass" id="button-addClass">
+            <img src="img/icon-add-class.png" alt="Add Icon" class="icon-button-addClass">
             Buat
         </button>
     </div>
@@ -63,8 +68,8 @@ export function contOrangMengajar() {
             Orang
         </p>
         <!-- BUTTON ADD CLASS JIKA BUTUH -->
-        <button class="button-createClass" id="button-createClass">
-            <img src="img/icon-add-class.png" alt="Add Icon" class="icon-button-createClass">
+        <button class="button-addClass" id="button-addClass">
+            <img src="img/icon-add-class.png" alt="Add Icon" class="icon-button-addClass">
             Tambah
         </button>
     </div>

@@ -15,7 +15,7 @@
 }
 
 .card-kecil-cover-isi {
-    background-color: #313131;
+    background-color: #003cff;
     width: 100%; 
     height: 40%; 
     border-top-left-radius: 10px;
@@ -34,8 +34,9 @@
 .card-kecil-isi-text {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: flex-start;
+    margin-top: 8px;
     width: 133px;
     height: 70px ;
 }

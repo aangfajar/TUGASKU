@@ -1,6 +1,6 @@
-import { buttonCreateClass, cardClassMengajarKosong ,cardClassMengajarIsi} from '../components/cMengajar.js';
-import { showDropdown } from '../components/dropdown-menu.js';
-import { showGreeting } from '../components/timeOfDay.js';
+import { cardClass, buttonAddClass } from '../service/cMengajar.js';
+import { showDropdown } from '../partials/dropdown-menu.js';
+import { showGreeting } from '../partials/timeOfDay.js';
 
 export default async () => {
     setTimeout(() => {
@@ -8,7 +8,8 @@ export default async () => {
     }, 0);
         
     const greet = await showGreeting()
-    const cards = await cardClassMengajarIsi();
+    const cards = await cardClass();
+    const buttonAdd = await buttonAddClass();
 
     return `
     ${greet}
@@ -18,10 +19,10 @@ export default async () => {
             Kelas mengajar anda
         </p>
         <!-- BUTTON ADD CLASS JIKA NO DEFAULT -->
-        ${buttonCreateClass()}
+        ${buttonAdd}
     </div>
     <div class="container-card">
-    ${cardClassMengajarIsi()}
+        ${cards}
     </div>
     `;
 }

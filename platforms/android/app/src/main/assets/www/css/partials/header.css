@@ -8,6 +8,7 @@
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Opsional: Tambahkan bayangan */
     display: flex; /* Elemen dalam baris horizontal */
     align-items: center; /* Vertikal rata tengah */
+    justify-content: center;
     padding: 0px;
 }
 
@@ -19,6 +20,7 @@
     cursor: pointer;
     margin-right: 10px; /* Jarak dari sisi kanan */
     margin-top: 8px;
+    margin-bottom: 8px;
 }
 
 /* Profile icon */

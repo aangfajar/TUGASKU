@@ -1,0 +1,73 @@
+* {
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0); 
+}
+
+.coverAddClass {
+    margin-top: 5px;
+    display: flex;
+    background-color: #313131;
+    width: 100%;
+    height: 125px;
+    box-sizing: border-box;
+}
+
+.inputNameClass{
+    margin-top: 20px;
+    border: none;
+    color: #ffffff;
+    width: 85%;
+    padding: 5px 10px;
+    text-decoration: none;
+    font-size: 24px;
+    font-weight: 600;
+    outline: none;
+    background-color: rgba(41, 167, 199, 0);
+}
+
+.inputMapelClass{
+    border: none;
+    color: #ffffff;
+    width: 85%;
+    padding: 5px 10px;
+    text-decoration: none;
+    font-size: 14px;
+    outline: none;
+    background-color: rgba(21, 255, 0, 0);
+}
+
+.inputNameClass::placeholder {
+    color: #737373;
+}
+
+.inputMapelClass::placeholder {
+    color: #737373;
+}
+
+.button-createClass{
+    align-self: flex-start;
+    margin-top: 100px;
+    margin-left: 25px;
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 600;
+    font-size: 20px;
+    display: flex;
+    background-color: #252525;
+    border: none;
+    border-radius: 10px;
+    color: #737373;
+    justify-content: center;
+    align-items: center;
+    padding: 5px 40px;
+    cursor: pointer;
+}
+
+.icon-button-createClass{
+    width: 16px; /* Ukuran lebar gambar */
+    height: 16px; /* Ukuran tinggi gambar */
+}
+
+.button-createClass:hover{
+    transition: ease-in-out 0.2s;
+    background-color: #313131;
+}
+

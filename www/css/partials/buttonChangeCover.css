@@ -1,0 +1,34 @@
+.button-changeCover{
+    justify-content: center;
+    align-items: center;
+    align-self: flex-start;
+    margin-left: auto;
+    margin-top: 10px;
+    margin-right: 10px;
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 700;
+    font-size: 12px;
+    border: none;
+    border-radius: 5px;
+    color: #737373;
+    background-color: #252525;
+    padding: 5px;
+    cursor: pointer;
+}
+
+.button-changeCover:hover{
+    transition: ease-in-out 0.2s;
+    background-color: #313131;
+}
+
+.pcr-app {
+    position: absolute !important;
+    top: 100px !important;
+    left: 30% !important;
+    z-index: 9999 !important;
+    border-radius: 5px !important;
+}
+
+.pcr-button {
+    display: none !important;
+}

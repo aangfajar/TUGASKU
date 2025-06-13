@@ -50,7 +50,7 @@ $('#popupRegister').on('click', function (e) {
 // Fungsi untuk menampilkan popup error
 function showPopupErrorRegister(message) {
     const $popup = $('#popupRegister');
-    $popup.find('.popup-box').text(message); // Set pesan error
+    $popup.find('.popup-alert').text(message); // Set pesan error
     $popup.show(); // Tampilkan popup
 }
 
