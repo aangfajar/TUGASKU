@@ -4,6 +4,7 @@ import Terdaftar from './views/terdaftar.js';
 import Tim from './views/tim.js';
 import Tugas from './views/tugas.js';
 import InClassMengajar from './views/inClassMengajar.js';
+import inClassTerdaftar from './views/inClassTerdaftar.js';
 
 const routes = {
   '/beranda': Beranda,
@@ -12,6 +13,7 @@ const routes = {
   '/tim': Tim,
   '/tugas': Tugas,
   '/inClassMengajar':InClassMengajar,
+  '/inClassTerdaftar':inClassTerdaftar,
 };
 
 const updateMenuLabel = (path) => {
@@ -23,6 +25,7 @@ const updateMenuLabel = (path) => {
     '/tim': 'Tim',
     '/tugas': 'Tugas',
     '/inClassMengajar': 'Mengajar',
+    '/inClassTerdaftar': 'Terdaftar',
   };
   menuLabel.textContent = labels[path] || 'Halaman Tidak Ditemukan';
 };

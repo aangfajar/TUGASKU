@@ -1,8 +1,8 @@
-import { cardLastSeenKosong } from '../components/cBeranda.js';
-import { cardUpComing } from '../components/cBeranda.js';
-import { cardITask } from '../components/cBeranda.js';
-import { showDropdown } from '../components/dropdown-menu.js';
-import { showGreeting } from '../components/timeOfDay.js';
+import { cardLastSeenKosong } from '../service/cBeranda.js';
+import { cardUpComing } from '../service/cBeranda.js';
+import { cardITask } from '../service/cBeranda.js';
+import { showDropdown } from '../partials/dropdown-menu.js';
+import { showGreeting } from '../partials/timeOfDay.js';
 
 export default async() => {
   setTimeout(() => {

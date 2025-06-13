@@ -30,7 +30,7 @@ app.post('/register', (req, res) => {
 });
 
 // Rute untuk login dengan validasi
-app.post('/login', 
+app.post('/login',  
     [
         body('username').notEmpty().withMessage('Username wajib diisi.'),
         body('password').notEmpty().withMessage('Password wajib diisi.')
@@ -84,6 +84,9 @@ app.get('/cMengajar', (req, res) => {
   });
 });
 
+app.get('/profile', authenticateToken, (req, res) => {
+    res.json({ message: 'Ini adalah data profil Anda.', user: req.user });
+});
 
 function authenticateToken(req, res, next) {
     const token = req.headers['authorization']; // Ambil token dari header Authorization
@@ -95,11 +98,6 @@ function authenticateToken(req, res, next) {
         next(); // Lanjutkan ke handler berikutnya
     });
 }
-
-app.get('/profile', authenticateToken, (req, res) => {
-    res.json({ message: 'Ini adalah data profil Anda.', user: req.user });
-});
-
 
 app.use(express.static(path.join(__dirname, '..')));
 app.get('/', (req, res) => {

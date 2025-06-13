@@ -1,8 +1,43 @@
+import { contForumMengajar,contOrangMengajar,contTugasMengajar,contNilaiMengajar } from '../components/cInMengajar.js';
+
 export default () => {
   setTimeout(() => {
-    showDropdown();
-    showGreeting();
-  }, 0);
+  const navLinks = document.querySelectorAll('.nav-link');
+  const sections = document.querySelectorAll('.section-menu');
+
+  // Fungsi scroll ke section saat klik menu
+  navLinks.forEach(link => {
+    link.addEventListener('click', (e) => {
+      e.preventDefault();
+      const targetId = link.getAttribute('data-scrollto');
+      const targetSection = document.getElementById(targetId);
+      if (targetSection) {
+        targetSection.scrollIntoView({ behavior: 'smooth' });
+      }
+
+      // Update kelas aktif
+      navLinks.forEach(l => l.classList.remove('active'));
+      link.classList.add('active');
+    });
+  });
+
+  // Observer saat user scroll manual
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const id = entry.target.id;
+        navLinks.forEach(link => {
+          link.classList.toggle('active', link.getAttribute('data-scrollto') === id);
+        });
+      }
+    });
+  }, {
+    threshold: 0.5, // setengah layar terlihat
+    root: document.querySelector('.container-section'),
+  });
+
+  sections.forEach(section => observer.observe(section));
+}, 100);
 
   return `
     <div class="cover">
@@ -19,19 +54,26 @@ export default () => {
         </div>
     </div>
     <div class="innerClass-menu">
-        <ul class="innerClass-menu-list">
-            <li><a href="forum.html" class="active">Forum</a></li>
-            <li><a href="tugas-kelas.html">Tugas Kelas</a></li>
-            <li><a href="orang.html">Orang</a></li>
-        </ul>
+        <nav class="innerClass-menu-list">
+            <a href="#" data-scrollto="forum" class="nav-link">Forum</a>
+            <a href="#" data-scrollto="tugas" class="nav-link">Tugas Kelas</a>
+            <a href="#" data-scrollto="orang" class="nav-link">Orang</a>
+            <a href="#" data-scrollto="nilai" class="nav-link">Nilai</a>
+        </nav>
     </div>
-    <input class="pengumuman" type="text" placeholder="Umumkan sesuatu untuk kelas anda"></input>
-    <p class="label-p">
-        <img src="img/icon-tugas-abu.png" alt="Lastseen Icon" class="icon-label" />
-        Penugasan Anda
-    </p>
-    <div class="innerClass-container-default">
-        Belum ada topik yang di buat
+    <div class="container-section" id="slider">
+        <section id="forum" class="section-menu">
+            ${contForumMengajar()}
+        </section>
+        <section id="tugas" class="section-menu">
+            ${contTugasMengajar()}
+        </section>
+        <section id="orang" class="section-menu">
+            ${contOrangMengajar()}
+        </section>
+        <section id="nilai" class="section-menu">
+            ${contNilaiMengajar()}
+        </section>
     </div>
   `;
 }

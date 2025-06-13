@@ -1,6 +1,6 @@
-import { showDropdown } from '../components/dropdown-menu.js';
-import { buttonJoinClass, cardClassTerdaftarIsi ,cardClassTerdaftarKosong} from '../components/cTerdaftar.js';
-import { showGreeting } from '../components/timeOfDay.js';
+import { cardClass, buttonAddClass } from '../service/cTerdaftar.js';
+import { showDropdown } from '../partials/dropdown-menu.js';
+import { showGreeting } from '../partials/timeOfDay.js';
 
 export default async () => {
     setTimeout(() => {
@@ -8,18 +8,21 @@ export default async () => {
     }, 0);
 
     const greet = await showGreeting()
+    const cards = await cardClass();
+    const buttonAdd = await buttonAddClass();
     
     return `
     ${greet}
     <div class="container-label">
         <p class="label-p">
-            <img src="img/icon-mengajar-abu.png" alt="Mengajar Icon" class="icon-label" />
-            Kelas mengajar anda
+            <img src="img/icon-terdaftar-abu.png" alt="Mengajar Icon" class="icon-label" />
+            Kelas terdaftar anda
         </p>
         <!-- BUTTON ADD CLASS JIKA NO DEFAULT -->
+        ${buttonAdd}
     </div>
     <div class="container-card">
-        ${cardClassTerdaftarKosong()}
+        ${cards}
     </div>
     `;
 }

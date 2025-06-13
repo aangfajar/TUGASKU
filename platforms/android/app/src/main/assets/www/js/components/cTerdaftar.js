@@ -31,13 +31,13 @@ export function cardClassTerdaftarKosong() {
 
 export function cardClassTerdaftarIsi(){
     return `
-    <div class="card-kecil-isi">
+    <div class="card-kecil-isi" onclick="location.hash = '#/inClassTerdaftar'">
         <div class="card-kecil-cover-isi">
             <img src="img/icon-profile.jpg" alt="Card Profile Icon" class="card-profile-icon">
         </div>
         <div class="card-kecil-isi-text">
-            <p class="title-class">Praktikum ASD</p>
-            <p class="mapel-class">Algoritma Struktur Data 24/25</p>
+            <p class="title-class">Pweb</p>
+            <p class="mapel-class">Pemrograman web 24/25</p>
         </div>
     </div>
     `;

@@ -46,8 +46,8 @@ export function cardTimIsi(){
 
 export function buttonAddTim() {
     return `
-    <button class="button-createClass" id="button-createClass">
-        <img src="img/icon-add-class.png" alt="Add Icon" class="icon-button-createClass">
+    <button class="button-addClass" id="button-addClass">
+        <img src="img/icon-add-class.png" alt="Add Icon" class="icon-button-addClass">
         Tambah
     </button>
     <div class="dropdown-menu-card" id="dropdownMenu" style="--dropdown-top: 125px; --dropdown-left: 220px;" >

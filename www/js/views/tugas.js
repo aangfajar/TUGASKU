@@ -1,35 +1,71 @@
-import { showDropdown } from '../components/dropdown-menu.js';
-import { showGreeting } from '../components/timeOfDay.js';
+import { contDiserahkanTugas, contDitugaskanTugas ,contSelesaiTugas} from '../service/cTugas.js';
+import { showDropdown } from '../partials/dropdown-menu.js';
+import { showGreeting } from '../partials/timeOfDay.js';
 
 export default async () => {
-    setTimeout(() => {
-        showDropdown();
-    }, 0);
+
+setTimeout(() => {
+  const navLinks = document.querySelectorAll('.nav-link');
+  const sections = document.querySelectorAll('.section-menu');
+
+  // Fungsi scroll ke section saat klik menu
+  navLinks.forEach(link => {
+    link.addEventListener('click', (e) => {
+      e.preventDefault();
+      const targetId = link.getAttribute('data-scrollto');
+      const targetSection = document.getElementById(targetId);
+      if (targetSection) {
+        targetSection.scrollIntoView({ behavior: 'smooth' });
+      }
+
+      // Update kelas aktif
+      navLinks.forEach(l => l.classList.remove('active'));
+      link.classList.add('active');
+    });
+  });
+
+  // Observer saat user scroll manual
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const id = entry.target.id;
+        navLinks.forEach(link => {
+          link.classList.toggle('active', link.getAttribute('data-scrollto') === id);
+        });
+      }
+    });
+  }, {
+    threshold: 0.5, // setengah layar terlihat
+    root: document.querySelector('.container-section'),
+  });
+
+  sections.forEach(section => observer.observe(section));
+}, 100);
+
+setTimeout(() => {
+    showDropdown();
+}, 0);
 
     const greet = await showGreeting()
     
     return `
     ${greet}
-    <p class="label-p">
-        <img src="img/icon-tugas-abu.png" alt="Tugas Icon" class="icon-label" />
-        Tugas anda
-    </p>
     <div class="innerClass-menu">
         <nav class="innerClass-menu-list">
-            <a href="#" data-scrollto="ditugaskan" class="nav-link active">Ditugaskan</a>
+            <a href="#" data-scrollto="ditugaskan" class="nav-link">Ditugaskan</a>
             <a href="#" data-scrollto="diserahkan" class="nav-link">Diserahkan</a>
-            <a href="#" data-scrollto="Selesai" class="nav-link">Selesai</a>
+            <a href="#" data-scrollto="selesai" class="nav-link">Selesai</a>
         </nav>
     </div>
     <div class="container-section" id="slider">
-        <section id="forum" class="section-menu">
-            <input class="pengumuman" type="text" placeholder="Umumkan sesuatu untuk kelas anda">
-            
+        <section id="ditugaskan" class="section-menu">
+            ${contDitugaskanTugas()}
         </section>
-        <section id="tugas" class="section-menu">
+        <section id="diserahkan" class="section-menu">
+            ${contDiserahkanTugas()}
         </section>
-        <section id="orang" class="section-menu">
-            <input class="pengumuman" type="text" placeholder="Umumkan sesuatu untuk kelas anda">
+        <section id="selesai" class="section-menu">
+            ${contSelesaiTugas()}
         </section>
     </div>
     `;

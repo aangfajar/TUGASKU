@@ -3,17 +3,12 @@ import { showDropdown } from '../components/dropdown-menu.js';
 import { showGreeting } from '../components/timeOfDay.js';
 
 export default async () => {
-    let cards = "";
     setTimeout(() => {
         showDropdown();
     }, 0);
         
-        const greet = await showGreeting()
-        cards = await cardClassMengajarIsi();
-    // setTimeout(async () => {
-    // }, 2000)
-    
-    // setTimeout(() => {
+    const greet = await showGreeting()
+    const cards = await cardClassMengajarIsi();
 
     return `
     ${greet}
@@ -26,8 +21,7 @@ export default async () => {
         ${buttonCreateClass()}
     </div>
     <div class="container-card">
-    ${cards}
+    ${cardClassMengajarIsi()}
     </div>
     `;
-    // }, 2000)
 }

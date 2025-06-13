@@ -19,7 +19,7 @@ export default async () => {
         <!-- BUTTON ADD CLASS JIKA NO DEFAULT -->
     </div>
     <div class="container-card">
-        ${cardClassTerdaftarKosong()}
+        ${cardClassTerdaftarIsi()}
     </div>
     `;
 }

@@ -2,9 +2,48 @@ import { showDropdown } from '../components/dropdown-menu.js';
 import { showGreeting } from '../components/timeOfDay.js';
 
 export default async () => {
-    setTimeout(() => {
-        showDropdown();
-    }, 0);
+
+setTimeout(() => {
+  const navLinks = document.querySelectorAll('.nav-link');
+  const sections = document.querySelectorAll('.section-menu');
+
+  // Fungsi scroll ke section saat klik menu
+  navLinks.forEach(link => {
+    link.addEventListener('click', (e) => {
+      e.preventDefault();
+      const targetId = link.getAttribute('data-scrollto');
+      const targetSection = document.getElementById(targetId);
+      if (targetSection) {
+        targetSection.scrollIntoView({ behavior: 'smooth' });
+      }
+
+      // Update kelas aktif
+      navLinks.forEach(l => l.classList.remove('active'));
+      link.classList.add('active');
+    });
+  });
+
+  // Observer saat user scroll manual
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const id = entry.target.id;
+        navLinks.forEach(link => {
+          link.classList.toggle('active', link.getAttribute('data-scrollto') === id);
+        });
+      }
+    });
+  }, {
+    threshold: 0.5, // setengah layar terlihat
+    root: document.querySelector('.container-section'),
+  });
+
+  sections.forEach(section => observer.observe(section));
+}, 100);
+
+setTimeout(() => {
+    showDropdown();
+}, 0);
 
     const greet = await showGreeting()
     
@@ -15,15 +54,22 @@ export default async () => {
         Tugas anda
     </p>
     <div class="innerClass-menu">
-        <ul class="innerClass-menu-list">
-            <li><a href="forum.html" class="active">Ditugaskan</a></li>
-            <li><a href="tugas-kelas.html">Belum diserahkan</a></li>
-            <li><a href="orang.html">Selesai</a></li>
-        </ul>
+        <nav class="innerClass-menu-list">
+            <a href="#" data-scrollto="ditugaskan" class="nav-link">Ditugaskan</a>
+            <a href="#" data-scrollto="diserahkan" class="nav-link">Diserahkan</a>
+            <a href="#" data-scrollto="selesai" class="nav-link">Selesai</a>
+        </nav>
     </div>
-    <div class="tugas-container">
+    <div class="container-section" id="slider">
+        <section id="ditugaskan" class="section-menu">
+            
+        </section>
+        <section id="diserahkan" class="section-menu">
+
+        </section>
+        <section id="selesai" class="section-menu">
         
-    <!-- UBAH CONTAINER SESUAI MENU -->
+        </section>
     </div>
     `;
 }

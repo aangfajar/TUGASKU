@@ -1,6 +1,7 @@
 .innerClass-menu {
     display: flex;
     justify-content: flex-end;
+    margin-right: 20px;
     width: 100%;
     height: 22px;
 }
@@ -12,7 +13,7 @@
     padding: 0;
 }
 
-.innerClass-menu-list a {
+.nav-link {
     text-decoration: none;
     padding: 5px 10px 5px 10px;
     color: #737373;
@@ -20,14 +21,14 @@
     transition: color 0.3s;
 }
 
-.innerClass-menu-list a.active {
+.nav-link.active {
     color: rgb(255, 255, 255);
     background-color: #737373;
     border-end-start-radius: 10px;
     border-end-end-radius: 10px;
 }
 
-.innerClass-menu-list a:hover {
+.nav-link:hover {
     transition: .2s ease-in-out;
     transition-delay: .1s;
     color: rgb(255, 255, 255);
