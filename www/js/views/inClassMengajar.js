@@ -1,15 +1,17 @@
 import { contForumMengajar,contOrangMengajar,contTugasMengajar,contNilaiMengajar } from '../service/cInMengajar.js';
 import { innerClassPickr } from '../partials/colorPicker.js';
 import { scrollPage } from '../partials/scrollPage.js';
+import { showInfoTask } from '../partials/infoTask.js';
 
 export default async () => {
-  setTimeout(() => {
-    scrollPage();
-    innerClassPickr();
-  }, 0);
+    setTimeout(() => {
+        scrollPage();
+        innerClassPickr();
+        showInfoTask();
+    }, 0);
 
 
-  return `
+    return `
     <div class="coverInnerClass" id="coverInnerClass">
         <button class="button-changeCover" id="button-changeCover-innerClass">
             Ubah cover
@@ -19,6 +21,17 @@ export default async () => {
             <div class="info-container">
                 <h2>Praktikum ASD</h2>
                 <p>Algoritma Struktur Data 24/25</p>
+            </div>
+            <img id="option-icon" src="img/icon-option.png" alt="Option Icon" class="option-icon"/>
+            <div class="dropdown-menu-card" id="dropdownMenu" style="--dropdown-top: 200px; --dropdown-right: 50px;" >
+                <a href="set-profile.html">
+                    <img src="img/icon-add-class.png" alt="" class="icon-dropdown" />
+                    Buat Tim
+                </a>
+                <a href="set-profile.html">
+                    <img src="img/icon-join.png" alt="" class="icon-dropdown" />
+                    Masuk Tim
+                </a>
             </div>
             <div class="kode-container">
                 <p class="label-kode">Kode Kelas</p>

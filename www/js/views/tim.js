@@ -10,7 +10,7 @@ export default async () => {
     const greet = await showGreeting()
     
     return `
-    ${greet}
+    <h1 id="greeting">${greet}</h1>
     <div class="container-label">
         <p class="label-p">
             <img src="img/icon-tim-abu.png" alt="Mengajar Icon" class="icon-label" />

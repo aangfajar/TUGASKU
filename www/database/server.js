@@ -188,9 +188,35 @@ app.get('/getCardTerdaftar',authenticateToken, (req, res) => {
     });
 });
 
-//DATA PROFILE
-app.get('/profile', authenticateToken, (req, res) => {
-    res.json({ message: 'Ini adalah data profil Anda.', user: req.user });
+//DATA USER
+app.get('/getUser', authenticateToken, (req, res) => {
+    const userId = req.user.id;
+
+    const query = `SELECT * FROM user WHERE id_user = ?`;
+    db.query(query, [userId], (err, results) => {
+    if (err) {
+    console.error('❌ Gagal ambil data user:', err);
+    return res.status(500).json({ error: 'Gagal ambil data user' });
+    }
+    res.json(results[0]);
+    });
+});
+
+//UPDATE USER
+app.put('/updateUser', authenticateToken, (req, res) => {
+    const userId = req.user.id;
+    const { username, email } = req.body;
+
+    const query = `UPDATE user SET username = ?, email = ? WHERE id_user = ?`;
+
+    db.query(query, [username, email, userId], (err, result) => {
+        if (err) {
+            console.error('❌ Gagal update data:', err);
+            return res.status(500).json({ error: 'Gagal update data user' });
+        }
+
+        res.json({ message: 'Data user berhasil diupdate' });
+    });
 });
 
 //CREATE TOKEN

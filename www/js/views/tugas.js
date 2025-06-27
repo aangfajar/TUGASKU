@@ -49,7 +49,7 @@ setTimeout(() => {
     const greet = await showGreeting()
     
     return `
-    ${greet}
+    <h1 id="greeting">${greet}</h1>
     <div class="innerClass-menu">
         <nav class="innerClass-menu-list">
             <a href="#" data-scrollto="ditugaskan" class="nav-link">Ditugaskan</a>

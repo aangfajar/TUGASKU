@@ -6,7 +6,7 @@ body {
     align-items: center;
     height: 100vh;
     background: linear-gradient(135deg, #191919, #252525);
-    font-family: 'Arial', sans-serif;
+    font-family: 'inter', sans-serif;
     color: #fff;
     overflow: hidden;
 }

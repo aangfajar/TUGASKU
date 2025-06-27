@@ -29,16 +29,26 @@
 
 .info-container h2 {
     color: #ffffff;
+    width: 180px;
     margin-bottom: 2px;
     margin: 0;
     padding: 0;
+    overflow-x: auto; 
+    overflow-y: hidden; 
+    white-space: nowrap; 
+    scrollbar-width: none;
 }
 
 .info-container p {
     color: #ffffff;
+    width: 180px;
     font-size: 12px;
     margin: 0;
     padding: 0;
+    overflow-x: auto; 
+    overflow-y: hidden; 
+    white-space: nowrap; 
+    scrollbar-width: none;
 }
 
 /*======================= kode kelas =================*/
@@ -67,10 +77,13 @@
     color: #ffffff;
 }
 
+.option-icon{
+    cursor: pointer;
+}
+
 .kode-icon{
     width: 18px;
     height: 18px;
-
 }
 
 /*====================== SECTION FORUM ================*/

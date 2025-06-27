@@ -52,6 +52,7 @@
     overflow-x: auto; 
     overflow-y: hidden; 
     white-space: nowrap; 
+    scrollbar-width: none;
 }
 
 .mapel-class {

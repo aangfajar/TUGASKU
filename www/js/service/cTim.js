@@ -50,7 +50,7 @@ export function buttonAddTim() {
         <img src="img/icon-add-class.png" alt="Add Icon" class="icon-button-addClass">
         Tambah
     </button>
-    <div class="dropdown-menu-card" id="dropdownMenu" style="--dropdown-top: 125px; --dropdown-left: 220px;" >
+    <div class="dropdown-menu-card" id="dropdownMenu" style="--dropdown-top: 160px; --dropdown-right: 50px;" >
         <a href="set-profile.html">
             <img src="img/icon-add-class.png" alt="" class="icon-dropdown" />
             Buat Tim
@@ -61,4 +61,37 @@ export function buttonAddTim() {
         </a>
     </div>
     `;
+}
+
+export async function buttonAddClass(){
+    let html;
+    const token = localStorage.getItem('token');
+    const res = await fetch('http://localhost:3000/getCardMengajar',{
+        headers: {
+        'Authorization': `Bearer ${token}`
+        }
+    });
+    const data = await res.json();
+
+    if (data.length !== 0) {
+        html = `
+        <button class="button-addClass" id="button-addClass">
+            <img src="img/icon-add-class.png" alt="Add Icon" class="icon-button-addClass">
+            Tambah
+        </button>
+        <div class="dropdown-menu-card" id="dropdownMenu" style="--dropdown-top: 125px; --dropdown-right: 50px;" >
+            <a href="set-profile.html">
+                <img src="img/icon-add-class.png" alt="" class="icon-dropdown" />
+                Buat Tim
+            </a>
+            <a href="set-profile.html">
+                <img src="img/icon-join.png" alt="" class="icon-dropdown" />
+                Masuk Tim
+            </a>
+        </div>
+        `; 
+    }else  {
+        html = ``; 
+    }
+    return html;
 }

@@ -12,7 +12,7 @@ export default async () => {
     const buttonAdd = await buttonAddClass();
 
     return `
-    ${greet}
+    <h1 id="greeting">${greet}</h1>
     <div class="container-label">
         <p class="label-p">
             <img src="img/icon-mengajar-abu.png" alt="Mengajar Icon" class="icon-label" />
