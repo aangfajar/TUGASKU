@@ -23,12 +23,17 @@
     <link rel="stylesheet" href="css/menu/addClass.css">
     <link rel="stylesheet" href="css/partials/buttonChangeCover.css">
     <link rel="stylesheet" href="css/partials/scrollPage.css">
+    <link rel="stylesheet" href="css/partials/settingUser.css">
+    <link rel="stylesheet" href="css/partials/infoTask.css">
     <link rel="stylesheet" href="css/global.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@simonwep/pickr/dist/themes/nano.min.css"/>
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
   </head>
   <body>
     <div class="main-wrapper">
+
+      <div class="fade-container"></div>
       <!-- Header -->
       <div class="header">
         <div class="navbar">
@@ -43,6 +48,40 @@
           />
         </div>
       </div>
+
+      <!-- Panel Setting -->
+      <nav class="panel-setting" id="panel-setting">
+        <div class="setting-profile">
+          <img id="profile-icon" src="img/icon-profile.jpg" alt="Profile Icon">
+          <img id="icon-set-profile" src="img/icon-set-profile.png" alt="Set Profile">
+          <div class="container-info-user">
+            <p class="info-username" id="info-username">
+              Username anda
+            </p>
+            <p class="info-email" id="info-email">
+              Emailanda@gmail.com
+            </p>
+          </div>
+        </div>
+        <p class="label-p" style="margin-bottom: 3px;">
+          <img src="img/icon-username.png" alt="Lastseen Icon" class="icon-label" />
+          Username
+        </p>
+        <input type="text" class="txt-set-user" id="set-username" placeholder="Username anda">
+        <p class="label-p" style="margin-bottom: 3px;">
+          <img src="img/icon-email-abu.png" alt="Lastseen Icon" class="icon-label" />
+          Email
+        </p>
+        <input type="text" class="txt-set-user" id="set-email" placeholder="Email anda">
+        <button class="btn-save-setting" id="save-button" style="display: none;">Simpan perubahan</button>
+        <a href="index.html" class="link-logout"
+          ><img
+            src="img/icon-logout.png"
+            alt="Logout Icon"
+            class="menu-icon"
+          /><span class="menu-text">Logout</span>
+        </a>
+      </nav>
 
       <!-- Sidebar -->
       <nav class="side-panel">
@@ -99,13 +138,7 @@
             >
           </li>
           <li>
-            <a href="index.html" class="link-logout"
-              ><img
-                src="img/icon-logout.png"
-                alt="Logout Icon"
-                class="menu-icon"
-              /><span class="menu-text">Logout</span></a
-            >
+
           </li>
         </ul>
       </nav>
@@ -123,6 +156,7 @@
     <script src="https://cdn.jsdelivr.net/npm/@simonwep/pickr/dist/pickr.min.js"></script>
     <script type="module" src="js/router.js"></script>
     <script type="module" src="js/partials/navbar.js"></script>
+    <script type="module" src="js/partials/settingUser.js"></script>
     <script type="module" src="js/partials/colorPicker.js"></script>
   </body>
 </html>

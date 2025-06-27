@@ -7,11 +7,12 @@
     gap: 15px; 
     overflow-x: auto; 
     overflow-y: hidden; 
-    white-space: nowrap; 
     padding: 10px 0px;
     width: 90%;
     box-sizing: border-box;
     margin-bottom: 30px;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
 }
 
 .upcoming-container {

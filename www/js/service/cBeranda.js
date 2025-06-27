@@ -18,15 +18,15 @@ export function cardLastSeenKosong() {
         <p>Halaman baru</p>
     </div>
     <div class="dropdown-menu-card" id="dropdownMenu" style="--dropdown-top: 230px; --dropdown-left: 125px;" >
-        <a href="set-profile.html">
+        <a href="#/mengajar">
             <img src="img/icon-mengajar-abu.png" alt="" class="icon-dropdown" />
             Mengajar
         </a>
-        <a href="set-profile.html">
+        <a href="#/terdaftar">
             <img src="img/icon-terdaftar-abu.png" alt="" class="icon-dropdown" />
             Kelas
         </a>
-        <a href="set-profile.html">
+        <a href="#/tim">
             <img src="img/icon-tim-abu.png" alt="" class="icon-dropdown" />
             Tim
         </a>
@@ -36,7 +36,7 @@ export function cardLastSeenKosong() {
 
 export function cardLastSeenIsi() {
     return `
-    <div class="card-kecil-isi">
+    <div class="card-kecil-isi" onclick="location.hash = '#/inClassMengajar'">
         <div class="card-kecil-cover-isi">
             <img src="img/icon-profile.jpg" alt="Card Profile Icon" class="card-profile-icon">
         </div>

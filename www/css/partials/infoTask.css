@@ -1,0 +1,16 @@
+.infoTask {
+    border-radius: 20px;
+    position: relative;
+    bottom: -270px;
+    width: 200px;
+    height: 270px;
+    background-color: #252525;
+    box-shadow: -1px 1px 17px 4px rgba(0,0,0,0.64);
+    -webkit-box-shadow: -1px 1px 17px 4px rgba(0,0,0,0.64);
+    -moz-box-shadow: -1px 1px 17px 4px rgba(0,0,0,0.64);
+    z-index: 1006;
+}
+
+.infoTask.open {
+    bottom: 0;
+}

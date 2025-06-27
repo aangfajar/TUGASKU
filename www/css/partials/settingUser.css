@@ -1,0 +1,123 @@
+/* Panel menu */
+.panel-setting {
+    border-radius: 20px;
+    position: fixed;
+    top: 50px;
+    right: -250px; 
+    width: 200px;
+    height: 270px;
+    background-color: #252525;
+    box-shadow: -1px 1px 17px 4px rgba(0,0,0,0.64);
+    -webkit-box-shadow: -1px 1px 17px 4px rgba(0,0,0,0.64);
+    -moz-box-shadow: -1px 1px 17px 4px rgba(0,0,0,0.64);
+    transition: right 0.3s ease; /* Animasi untuk transisi */
+    z-index: 1002;
+}
+
+.panel-setting.open {
+    right: 0; 
+}
+
+.setting-profile {
+    display: flex;
+    margin-left: 10px;
+    margin-top: 10px;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.container-info-user {
+    display: flex;
+    flex-direction: column;
+}
+
+#icon-set-profile {
+    position: absolute;
+    cursor: pointer;
+    top: 32px;
+    left: 33px;
+    width: 23px;
+}
+
+.info-username {
+    padding: 0;
+    margin: 0;
+    margin-left: 10px;
+    display: flex;
+    font-size: 14px;
+    color: white;
+    width: 90%;
+    overflow-x: auto; 
+    overflow-y: hidden; 
+    white-space: nowrap; 
+    scrollbar-width: none;
+}
+
+.info-email {
+    padding: 0;
+    margin: 0;
+    margin-left: 10px;
+    margin-top: 2px;
+    display: flex;
+    font-size: 11px;
+    color: white;
+    width: 90%;
+    overflow-x: auto; 
+    overflow-y: hidden; 
+    white-space: nowrap; 
+    scrollbar-width: none;
+}
+
+.txt-set-user {
+    margin-left: 20px;
+    border: none;
+    color: #ffffff;
+    width: 85%;
+    text-decoration: none;
+    font-size: 14px;
+    outline: none;
+    background-color: rgba(21, 255, 0, 0);
+}
+
+.btn-save-setting {
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 700;
+    font-size: 14px;
+    border: none;
+    border-radius: 5px;
+    color: #737373;
+    background-color: #313131;
+    padding: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+    margin-left: 20px;
+}
+
+.btn-save-setting:hover {
+    transition: ease-in-out 0.2s;
+    color: #ffffff;
+    background-color: #737373;
+}
+
+.link-logout {
+    margin-top: 60px;
+    display: flex; 
+    align-items: center;
+    color: white;
+    text-decoration: none; 
+    font-size: 14px;
+    padding: 10px 20px;
+    box-sizing: border-box; 
+    width: 100%;
+}
+
+.link-logout:hover {
+    transition: .2s ease-in-out;
+    transition-delay: .1s;
+    text-decoration: none;
+    background-color: #737373;
+    border-radius: 10px;
+}

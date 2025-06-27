@@ -8,18 +8,16 @@ export function addClassPickr() {
         el: '#color-picker',
         theme: 'nano', // or 'monolithx', or 'nano'
         default: defaultColor,
+        swatches: null,
 
         components: {
 
             // Main components
             preview: true,
-            opacity: true,
             hue: true,
 
             // Input / output Options
             interaction: {
-                hex: true,
-                rgba: true,
                 input: true,
             }
         }
@@ -46,13 +44,10 @@ export function innerClassPickr(){
 
             // Main components
             preview: true,
-            opacity: true,
             hue: true,
 
             // Input / output Options
             interaction: {
-                hex: true,
-                rgba: true,
                 input: true,
                 save: true,
             }
