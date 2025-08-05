@@ -19,7 +19,7 @@ export async function cardClass() {
         `;
     }else {
         html = data.map(kelas => `
-        <div class="card-kecil-isi" onclick="location.hash = '#/inClassMengajar'">
+        <div class="card-kecil-isi" onclick="masukKelasTerdaftar('${kelas.kode_kelas}')">
         <div class="card-kecil-cover-isi" style="background-color:${kelas.cover_warna}">
             <img src="img/icon-profile.jpg" alt="Card Profile Icon" class="card-profile-icon">
         </div>
@@ -54,6 +54,11 @@ export async function buttonAddClass(){
         html = ``; 
     }
     return html;
+}
+
+window.masukKelasTerdaftar = (kode) => {
+    localStorage.setItem('kode_kelas_aktif_terdaftar', kode);
+    location.hash = '#/inClassTerdaftar';
 }
 
 // export function cardClassTerdaftarIsi(){

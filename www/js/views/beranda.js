@@ -18,7 +18,7 @@ export default async() => {
     Terakhir dilihat
   </p>
   <div class="lastseen-container">
-    ${cardLastSeenIsi()}
+    ${cardLastSeenKosong()}
   </div>
   <p class="label-p">
     <img src="img/icon-calender-abu.png" alt="Lastseen Icon" class="icon-label" />

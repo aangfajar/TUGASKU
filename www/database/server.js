@@ -1,3 +1,4 @@
+const multer = require('multer');
 const express = require('express');
 const bodyParser = require('body-parser');
 const bcrypt = require('bcryptjs');
@@ -7,9 +8,24 @@ const SECRET_KEY = 'your_secret_key';
 const { body, validationResult } = require('express-validator');
 const path = require('path');
 
+//MULTER
+const storage = multer.diskStorage({
+    destination: function (req, file, cb) {
+        cb(null, path.join(__dirname, 'penugasan')); // bukan 'uploads/penugasan' lagi
+    },
+    filename: function (req, file, cb) {
+        const uniqueName = Date.now() + '-' + file.originalname;
+        cb(null, uniqueName);
+    }
+});
+
+const upload = multer({ storage: storage });
+
+
 const app = express();
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
+app.use('/penugasan', express.static(path.join(__dirname, 'penugasan')));
 
 // REGISTRASI
 app.post('/register', (req, res) => {
@@ -218,6 +234,104 @@ app.put('/updateUser', authenticateToken, (req, res) => {
         res.json({ message: 'Data user berhasil diupdate' });
     });
 });
+
+//DETAIL KELAS
+app.get('/getDetailKelas/:kode_kelas', authenticateToken, (req, res) => {
+    const kode_kelas = req.params.kode_kelas;
+
+    const query = `SELECT * FROM kelas WHERE kode_kelas = ? `;
+    db.query(query, [kode_kelas], (err, results) => {
+        if (err) {
+        return res.status(500).json({ error: 'Gagal mengambil detail kelas' });
+        }
+
+        if (results.length === 0) {
+        return res.status(404).json({ error: 'Kelas tidak ditemukan' });
+        }
+
+        res.json(results[0]); // kirim hanya satu objek, bukan array
+    });
+});
+
+//CREATE TASK
+app.post('/createTask', authenticateToken, upload.single('file'), (req, res) => {
+    const id_user = req.user.id;
+    const { id_kelas, judul, isi, deadline } = req.body;
+    const tanggal_posting = new Date();
+    const file = req.file ? req.file.filename : null;
+
+    // Cari ID kelas dari kode_kelas
+    const getIdQuery = 'SELECT id_kelas FROM kelas WHERE kode_kelas = ?';
+    db.query(getIdQuery, [id_kelas], (err, result) => {
+        if (err || result.length === 0) {
+            console.error('❌ Gagal ambil ID kelas:', err);
+            return res.status(500).json({ error: 'Kelas tidak ditemukan' });
+        }
+
+        const id_kelas_asli = result[0].id_kelas;
+
+        const query = `
+            INSERT INTO posting (id_kelas, id_user, judul, isi, tanggal_posting, deadline, file)
+            VALUES (?, ?, ?, ?, ?, ?, ?)
+        `;
+
+        db.query(query, [id_kelas_asli, id_user, judul, isi, tanggal_posting, deadline, file], (err2) => {
+            if (err2) {
+                console.error('❌ Gagal posting tugas:', err2);
+                return res.status(500).json({ error: 'Gagal posting tugas' });
+            }
+
+            res.status(200).json({ message: 'Tugas berhasil diposting!' });
+        });
+    });
+});
+
+//GET LIST TASK
+app.get('/getTask/:kode_kelas', authenticateToken, (req, res) => {
+    const { kode_kelas } = req.params;
+
+    const queryId = 'SELECT id_kelas FROM kelas WHERE kode_kelas = ?';
+    db.query(queryId, [kode_kelas], (err1, result1) => {
+        if (err1 || result1.length === 0) {
+        return res.status(404).json({ error: 'Kelas tidak ditemukan' });
+        }
+
+        const id_kelas = result1[0].id_kelas;
+        const queryTugas = `
+        SELECT * FROM posting WHERE id_kelas = ?
+        `;
+
+        db.query(queryTugas, [id_kelas], (err2, result2) => {
+        if (err2) {
+            return res.status(500).json({ error: 'Gagal ambil data tugas' });
+        }
+
+        const formatDate = (dateObj) => {
+            return dateObj.toISOString().split('T')[0]; // hasilnya "2025-06-30"
+        };
+        
+        const formattedResults = result2.map(posting => ({
+            ...posting,
+            tanggal_posting: formatDate(posting.tanggal_posting),
+            deadline: formatDate(posting.deadline),
+        }));
+
+        res.json(formattedResults);
+        });
+    });
+});
+
+//GET DETAIL TASK by LIST
+app.get('/getDetailTugas/:id', authenticateToken, (req, res) => {
+    const id = req.params.id;
+
+    const queryTugas = 'SELECT * FROM posting WHERE id_posting = ?';
+    db.query(queryTugas, [id], (err, result) => {
+        if (err) return res.status(500).json({ error: 'Gagal ambil data tugas' });
+        res.json(result[0]);
+    });
+});
+
 
 //CREATE TOKEN
 function authenticateToken(req, res, next) {

@@ -1,68 +1,78 @@
-import { contForumMengajar,contOrangMengajar,contTugasMengajar,contNilaiMengajar } from '../service/cInMengajar.js';
+import { contForumMengajar, contOrangMengajar, contTugasMengajar, contNilaiMengajar, detailKelas, navAddTask, navUpdateTask, copyKode } from '../service/cInMengajar.js';
 import { innerClassPickr } from '../partials/colorPicker.js';
 import { scrollPage } from '../partials/scrollPage.js';
-import { showInfoTask } from '../partials/infoTask.js';
+import { showInfoTaskMengajar } from '../partials/infoTask.js';
 
 export default async () => {
+    const navAddTugas = await navAddTask();
+    const forumMengajar = await contForumMengajar();
+    const tugasMengajar = await contTugasMengajar();
+    const detailsKelas = await detailKelas();
+
     setTimeout(() => {
         scrollPage();
         innerClassPickr();
-        showInfoTask();
-    }, 0);
-
-
+        showInfoTaskMengajar();
+        navUpdateTask();
+        copyKode();
+    },1 );
+    
     return `
-    <div class="coverInnerClass" id="coverInnerClass">
-        <button class="button-changeCover" id="button-changeCover-innerClass">
-            Ubah cover
-            <div class="color-picker" id="color-picker"></div>
-        </button>
-        <div class="kodeInfo-container">
-            <div class="info-container">
-                <h2>Praktikum ASD</h2>
-                <p>Algoritma Struktur Data 24/25</p>
-            </div>
-            <img id="option-icon" src="img/icon-option.png" alt="Option Icon" class="option-icon"/>
-            <div class="dropdown-menu-card" id="dropdownMenu" style="--dropdown-top: 200px; --dropdown-right: 50px;" >
-                <a href="set-profile.html">
-                    <img src="img/icon-add-class.png" alt="" class="icon-dropdown" />
-                    Buat Tim
-                </a>
-                <a href="set-profile.html">
-                    <img src="img/icon-join.png" alt="" class="icon-dropdown" />
-                    Masuk Tim
-                </a>
-            </div>
-            <div class="kode-container">
-                <p class="label-kode">Kode Kelas</p>
-                <h4 class="kode">
-                    jhms6ugf
-                    <img src="img/icon-copy.png" alt="Copy Icon" class="kode-icon"/>
-                </h4>
-            </div>
+        ${detailsKelas}
+        <div class="innerClass-menu">
+            <nav class="innerClass-menu-list">
+                <a href="" data-scrollto="forum" class="nav-link">Forum</a>
+                <a href="" data-scrollto="tugas" class="nav-link">Tugas Kelas</a>
+                <a href="" data-scrollto="orang" class="nav-link">Orang</a>
+                <a href="" data-scrollto="nilai" class="nav-link">Nilai</a>
+            </nav>
         </div>
-    </div>
-    <div class="innerClass-menu">
-        <nav class="innerClass-menu-list">
-            <a href="#" data-scrollto="forum" class="nav-link">Forum</a>
-            <a href="#" data-scrollto="tugas" class="nav-link">Tugas Kelas</a>
-            <a href="#" data-scrollto="orang" class="nav-link">Orang</a>
-            <a href="#" data-scrollto="nilai" class="nav-link">Nilai</a>
-        </nav>
-    </div>
-    <div class="container-section" id="slider">
-        <section id="forum" class="section-menu">
-            ${contForumMengajar()}
-        </section>
-        <section id="tugas" class="section-menu">
-            ${contTugasMengajar()}
-        </section>
-        <section id="orang" class="section-menu">
-            ${contOrangMengajar()}
-        </section>
-        <section id="nilai" class="section-menu">
-            ${contNilaiMengajar()}
-        </section>
-    </div>
-  `;
+        <div class="popup-container-alert" id="popup-copyKode">
+            <div class="popup-alert"></div>
+        </div>
+        <div class="container-section" id="slider">
+
+            <!-- ================================ SECTION FORUM ================================ -->
+            <section id="forum" class="section-menu">
+                <input class="pengumuman" type="text" placeholder="Umumkan sesuatu untuk kelas anda">
+                <div class="container-label">
+                    <p class="label-p">
+                        <img src="img/icon-forum-abu.png" alt="Mengajar Icon" class="icon-label" />
+                        Forum
+                    </p>
+                </div>
+                ${forumMengajar}
+            </section>
+
+            <!-- ================================ SECTION TUGAS ================================ -->
+            <section id="tugas" class="section-menu">
+                <div class="container-label">
+                    <p class="label-p">
+                        <img src="img/icon-tugas-abu.png" alt="Mengajar Icon" class="icon-label" />
+                        Penugasan Anda
+                    </p>
+                    <!-- BUTTON ADD CLASS JIKA BUTUH -->
+                    <button class="button-addClass" id="button-addTask">
+                        <img src="img/icon-add-class.png" alt="Add Icon" class="icon-button-addClass">
+                        Buat
+                    </button>
+                </div>
+                ${tugasMengajar}
+                ${navAddTugas}
+                <div class="popup-container-alert" id="popup-addTask">
+                    <div class="popup-alert"></div>
+                </div>
+            </section>
+
+            <!-- ================================ SECTION ORANG ================================ -->
+            <section id="orang" class="section-menu">
+                ${contOrangMengajar()}
+            </section>
+
+            <!-- ================================ SECTION NILAI ================================ -->
+            <section id="nilai" class="section-menu">
+                ${contNilaiMengajar()}
+            </section>
+        </div>
+        `;
 }

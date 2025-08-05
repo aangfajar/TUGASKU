@@ -10,7 +10,7 @@
     box-shadow: -1px 1px 17px 4px rgba(0,0,0,0.64);
     -webkit-box-shadow: -1px 1px 17px 4px rgba(0,0,0,0.64);
     -moz-box-shadow: -1px 1px 17px 4px rgba(0,0,0,0.64);
-    transition: right 0.3s ease; /* Animasi untuk transisi */
+    transition: right 0.3s ease-in-out; /* Animasi untuk transisi */
     z-index: 1002;
 }
 
@@ -88,8 +88,8 @@
     font-size: 14px;
     border: none;
     border-radius: 5px;
-    color: #737373;
-    background-color: #313131;
+    color: #ffffff;
+    background-color: #49cc21;
     padding: 5px;
     cursor: pointer;
     margin-top: 20px;
@@ -98,8 +98,8 @@
 
 .btn-save-setting:hover {
     transition: ease-in-out 0.2s;
-    color: #ffffff;
-    background-color: #737373;
+    color: #737373;
+    background-color: #256611;
 }
 
 .link-logout {
