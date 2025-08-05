@@ -6,7 +6,7 @@
     height: 100vh;
     background: rgba(0, 0, 0, 0.5); /* Latar belakang transparan */
     display: none;
-    z-index: 1000;
+    z-index: 1010;
 }
 
 .popup-alert {

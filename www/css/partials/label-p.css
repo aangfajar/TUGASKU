@@ -8,7 +8,7 @@
 .label-p{
     display: flex;
     align-self: flex-start;
-    width: 275px;
+    width: auto;
     color: #737373;
     font-size: 11px;
 }

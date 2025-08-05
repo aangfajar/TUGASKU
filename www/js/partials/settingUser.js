@@ -26,7 +26,7 @@ document.addEventListener('click', function (event) {
 const usernameInput = document.getElementById('set-username');
 const emailInput = document.getElementById('set-email');
 const saveButton = document.getElementById('save-button');
-    function checkInputs() {
+function checkInputs() {
     const username = usernameInput.value.trim();
     const email = emailInput.value.trim();
 
@@ -36,7 +36,7 @@ const saveButton = document.getElementById('save-button');
     } else {
         saveButton.style.display = 'none';
     }
-    }
+}
 usernameInput.addEventListener('input', checkInputs);
 emailInput.addEventListener('input', checkInputs);
 
@@ -44,6 +44,7 @@ emailInput.addEventListener('input', checkInputs);
 // ======================== FETCH DATA INFO AKUN ==============================
 //AMBIL INFO AKUN
 const token = localStorage.getItem('token');
+console.log(token);
 
 fetch('http://localhost:3000/getUser', {
 headers: {
@@ -69,8 +70,12 @@ document.getElementById('save-button').addEventListener('click', async () => {
     saveButton.disabled = true; // 🔒 Hindari klik berkali-kali
 
     const token = localStorage.getItem('token');
-    const username = document.getElementById('set-username').value;
-    const email = document.getElementById('set-email').value;
+
+    const usernameInput = document.getElementById('set-username');
+    const emailInput = document.getElementById('set-email');
+
+    const username = usernameInput.value.trim() !== '' ? usernameInput.value.trim() : usernameInput.placeholder;
+    const email = emailInput.value.trim() !== '' ? emailInput.value.trim() : emailInput.placeholder;
 
     try {
         const response = await fetch('http://localhost:3000/updateUser', {
@@ -85,7 +90,8 @@ document.getElementById('save-button').addEventListener('click', async () => {
         const result = await response.json();
 
         if (response.ok) {
-            alert('✅ Berhasil mengupdate data!');
+            window.location.reload();
+            showPopupErrorSettingUser('Berhasil update');
             const fadeContainer = document.querySelector('.fade-container');
             const panelSetting = document.querySelector('.panel-setting');
             const usernameInput = document.getElementById('set-username');
@@ -94,7 +100,6 @@ document.getElementById('save-button').addEventListener('click', async () => {
             emailInput.value='';
             panelSetting.classList.remove('open');
             fadeContainer.style.display = 'none';
-            window.location.reload();
         } else {
             alert('❌ Gagal: ' + result.error);
         }
@@ -104,3 +109,19 @@ document.getElementById('save-button').addEventListener('click', async () => {
         saveButton.disabled = false; // 🔓 Aktifkan kembali tombol
     }
 });
+
+$('#popup-settingUser').on('click', function (e) {
+    if (e.target === this) {
+        hidePopupErrorSettingUser();
+    }
+});
+
+function showPopupErrorSettingUser(message) {
+    const $popup = $('#popup-settingUser');
+    $popup.find('.popup-alert').text(message);
+    $popup.show();
+}
+
+function hidePopupErrorSettingUser() {
+    $('#popup-settingUser').hide();
+}
